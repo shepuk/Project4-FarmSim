@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel:wght@200;800&display=swap');
+
+
 /* The sidebar menu */
 .sidebar {
     height: 100%;
@@ -10,44 +13,54 @@
     /* Stay on top */
     top: 0;
     left: 0;
-    background-color: #111;
-    /* Black*/
-    background-color: #ffffff;
-    opacity: 1;
-    background-image:  linear-gradient(135deg, #e6f3ff 25%, transparent 25%), linear-gradient(225deg, #e6f3ff 25%, transparent 25%), linear-gradient(45deg, #e6f3ff 25%, transparent 25%), linear-gradient(315deg, #e6f3ff 25%, #ffffff 25%);
-    background-position:  40px 0, 40px 0, 0 0, 0 0;
-    background-size: 80px 80px;
-    background-repeat: repeat;
     overflow-x: hidden;
     /* Disable horizontal scroll */
-    padding-top: 60px;
-    /* Place content 60px from the top */
     transition: 0.5s;
-    /* 0.5 second transition effect to slide in the sidebar */
+    -webkit-box-shadow: 20px 0px 42px -30px rgba(0,0,0,0.23); 
+    box-shadow: 20px 0px 42px -30px rgba(0,0,0,0.23);
+
+    background: #FFEEEE;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #DDEFBB, #FFEEEE);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #DDEFBB, #FFEEEE); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    border-right: 1px solid rgb(126 126 126);  
 }
 
 .navbar {
-    background-color: #111 !important;
-    /* Black*/
-    background-image:  linear-gradient(135deg, #e6f3ff 25%, transparent 25%), linear-gradient(225deg, #e6f3ff 25%, transparent 25%), linear-gradient(45deg, #e6f3ff 25%, transparent 25%), linear-gradient(315deg, #e6f3ff 25%, #ffffff 25%);
-    background-position:  40px 0, 40px 0, 0 0, 0 0;
-    background-size: 80px 80px;
-    background-repeat: repeat;
+    background-color: #ffffff;
 }
 
 /* The sidebar links */
 .sidebar a {
-    padding: 8px 8px 8px 32px;
+    width: 90%;
+    margin:auto;
+    font-family: 'Martel', serif;
     text-decoration: none;
-    font-size: 25px;
-    color: #818181;
+    font-size: 1rem;
+    color: rgb(0, 0, 0);
     display: block;
     transition: 0.3s;
+    padding: 4px;
+    padding-left: 35px;
+    border-bottom: 1px solid rgb(126 126 126);
+}
+
+.logo {
+    margin: 10px auto;
+    margin-top: 30px;
+    background-image: url("/static/ui/logo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    image-rendering: pixelated;
+    width: 210px;
+    height: 160px;
+    -webkit-filter: drop-shadow(3px 5px 5px #222);
+    filter: drop-shadow(0px 3px 5px #000);
 }
 
 /* When you mouse over the navigation links, change their color */
 .sidebar a:hover {
-    color: #f1f1f1;
+    color: #777777;
 }
 
 i {
@@ -57,9 +70,7 @@ i {
     transition: 0.3s;
 }
 
-i:hover {
-    color: #963434;
-}
+i:hover {}
 
 /* Position and style the close button (top right corner) */
 .sidebar .closebtn {
@@ -89,10 +100,8 @@ button:focus {
 #main {
     transition: margin-left .5s;
     /* If you want a transition effect */
-    padding: 0px;
+    padding-top: 0px;
     margin-left: 250px;
-    height: 200vw;
-
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
