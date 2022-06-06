@@ -38,8 +38,10 @@
         <div class="logo"></div>
         <div class="divider"></div>
         <a href="#">Home</a>
-        <a href="#">Account</a>
-        <a href="#">Contact</a>
+        <a href="#">Help</a>
+        <a href="#">Farm</a>
+        <a href="#">Profile</a>
+        <a href="#">About</a>
         <a href="#">Contact</a>
       </div>
       
@@ -51,19 +53,18 @@
             </button>
           </div>
         </nav>
-        
+
+        {% if messages %}
+        <div class="message-container"></div>
+        {% endif %}
+    
+        {% block page_header %}
+        {% endblock %}
+    
+        {% block content %}
+        {% endblock %}
 
       </div>
-
-    {% if messages %}
-    <div class="message-container"></div>
-    {% endif %}
-
-    {% block page_header %}
-    {% endblock %}
-
-    {% block content %}
-    {% endblock %}
 
     {% block postloadjs %}
     {% endblock %}

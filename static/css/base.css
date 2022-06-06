@@ -1,36 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Martel:wght@200;800&display=swap');
 
 
-/* The sidebar menu */
+.col {
+    border-bottom: 1px solid rgb(194, 194, 194);
+    border-top: 1px solid rgb(194 194 194);
+}
+
+h1 {
+    font-family: 'Martel', serif;
+    font-weight: 800;
+    margin-top: 8px;
+    font-size: 1.5rem;
+}
+
+/* ---------------------------------------------------------------- NAVIGATION */
 .sidebar {
     height: 100%;
-    /* 100% Full-height */
     width: 250px;
-    /* 0 width - change this with JavaScript */
     position: fixed;
-    /* Stay in place */
     z-index: 1;
-    /* Stay on top */
     top: 0;
     left: 0;
     overflow-x: hidden;
-    /* Disable horizontal scroll */
     transition: 0.5s;
     -webkit-box-shadow: 20px 0px 42px -30px rgba(0,0,0,0.23); 
     box-shadow: 20px 0px 42px -30px rgba(0,0,0,0.23);
-
     background: #FFEEEE;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to bottom, #DDEFBB, #FFEEEE);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to bottom, #DDEFBB, #FFEEEE); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-    border-right: 1px solid rgb(126 126 126);  
+    border-right: 1px solid rgb(126 126 126);
 }
 
-.navbar {
-    background-color: #ffffff;
-}
-
-/* The sidebar links */
 .sidebar a {
     width: 90%;
     margin:auto;
@@ -45,10 +45,14 @@
     border-bottom: 1px solid rgb(126 126 126);
 }
 
+.navbar {
+    background-color: #ffffff;
+}
+
 .logo {
     margin: 10px auto;
     margin-top: 30px;
-    background-image: url("/static/ui/logo.png");
+    background-image: url("/media/ui/logo.png");
     background-repeat: no-repeat;
     background-size: contain;
     image-rendering: pixelated;
@@ -58,7 +62,6 @@
     filter: drop-shadow(0px 3px 5px #000);
 }
 
-/* When you mouse over the navigation links, change their color */
 .sidebar a:hover {
     color: #777777;
 }
@@ -70,19 +73,6 @@ i {
     transition: 0.3s;
 }
 
-i:hover {}
-
-/* Position and style the close button (top right corner) */
-.sidebar .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-    padding: 0;
-}
-
-/* The button used to open the sidebar */
 .openbtn {
     font-size: 20px;
     cursor: pointer;
@@ -96,21 +86,17 @@ button:focus {
     outline: none;
 }
 
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
-    transition: margin-left .5s;
-    /* If you want a transition effect */
+    transition: margin-left .7s;
     padding-top: 0px;
     margin-left: 250px;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-    .sidebar {
-        padding-top: 15px;
-    }
-
-    .sidebar a {
-        font-size: 18px;
-    }
+.house-img {
+    height: 100px;
+    width: auto;
+    background-image: url(/media/ui/house.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    image-rendering: pixelated;
 }
