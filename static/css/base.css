@@ -1,16 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Martel:wght@200;800&display=swap');
-
-
-.col {
-    border-bottom: 1px solid rgb(194, 194, 194);
-    border-top: 1px solid rgb(194 194 194);
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 h1 {
     font-family: 'Martel', serif;
     font-weight: 800;
     margin-top: 8px;
     font-size: 1.5rem;
+}
+
+h2 {
+    font-family: 'Poppins', serif;
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+
+h3 {
+    font-family: 'Poppins', serif;
+    font-weight: 300;
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+p {
+    font-family: 'Poppins', serif;
+    font-weight: 200;
 }
 
 /* ---------------------------------------------------------------- NAVIGATION */
@@ -49,7 +62,7 @@ h1 {
 }
 
 .navbar {
-    background-color: #ffffff;
+    background-color: #edf2f4;
 }
 
 .logo {
@@ -93,15 +106,20 @@ button:focus {
     transition: margin-left .7s;
     padding-top: 0px;
     margin-left: 250px;
+    background-color: #edf2f4;
 }
 
-.house-img {
-    height: 100px;
-    width: auto;
-    background-image: url(/media/ui/house.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    image-rendering: pixelated;
+.box {
+    border-radius: 5px;
+    box-shadow: 0px 30px 40px -30px hsl(229, 6%, 66%);
+    padding: 25px;
+    margin: 15px; 
+    border-top: 3px solid #6d86f5;
+    background-color: #faf9f9;
+}
+
+.box img {
+    float: right;
 }
 
 @media (max-width: 992px) {
