@@ -99,7 +99,7 @@ button:focus {
     padding-top: 0px;
     margin-left: 250px;
     background-color: #edf2f4;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .box {
@@ -111,6 +111,33 @@ button:focus {
     background-color: #faf9f9;
 }
 
+.bg-green {
+    background-color: #4d9959;
+}
+
+.store-item {
+    transition: 0.2s;
+}
+
+.store-item:hover {
+    background-color: #ebebeb;
+}
+
+.store-image {
+    height: 32px;
+    width: 32px;
+    image-rendering: pixelated;
+}
+
+.store-price {
+    margin-left: auto;
+}
+
+.store-price i {
+    color: #FFD700;
+    margin-left: 3px;
+}
+
 .box img {
     float: right;
 }
@@ -119,6 +146,7 @@ button:focus {
     .openbtn {
         flex-wrap: nowrap;
         justify-content: flex-end;
+        margin-left: auto;
     }
 
     #main {
