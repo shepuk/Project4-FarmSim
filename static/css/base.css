@@ -44,8 +44,8 @@ p {
 .sidebar a {
     width: 66%;
     margin: auto;
-    font-family: 'Martel', serif;
     text-decoration: none;
+    font-family: 'Poppins', serif;
     font-size: 1rem;
     color: rgb(0, 0, 0);
     display: block;
@@ -116,7 +116,7 @@ button:focus {
 }
 
 @media (max-width: 992px) {
-    .navbar-expand-lg {
+    .openbtn {
         flex-wrap: nowrap;
         justify-content: flex-end;
     }

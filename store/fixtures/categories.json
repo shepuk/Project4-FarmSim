@@ -1,0 +1,16 @@
+[{
+        "pk": 1,
+        "model": "store.category",
+        "fields": {
+            "name": "seeds",
+            "friendly_name": "Seeds"
+        }
+    }, {
+        "pk": 2,
+        "model": "store.category",
+        "fields": {
+            "name": "tools",
+            "friendly_name": "Tools"
+        }
+    }
+]
