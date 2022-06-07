@@ -23,17 +23,20 @@ h1 {
     left: 0;
     overflow-x: hidden;
     transition: 0.5s;
-    -webkit-box-shadow: 20px 0px 42px -30px rgba(0,0,0,0.23); 
-    box-shadow: 20px 0px 42px -30px rgba(0,0,0,0.23);
-    background: #FFEEEE;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #DDEFBB, #FFEEEE);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #DDEFBB, #FFEEEE); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    -webkit-box-shadow: 20px 0px 42px -30px rgba(0, 0, 0, 0.23);
+    box-shadow: 20px 0px 42px -30px rgba(0, 0, 0, 0.23);
+    background: #FFEEEE;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #DDEFBB, #FFEEEE);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #DDEFBB, #FFEEEE);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     border-right: 1px solid rgb(126 126 126);
 }
 
 .sidebar a {
     width: 90%;
-    margin:auto;
+    margin: auto;
     font-family: 'Martel', serif;
     text-decoration: none;
     font-size: 1rem;
@@ -99,4 +102,14 @@ button:focus {
     background-repeat: no-repeat;
     background-size: contain;
     image-rendering: pixelated;
+}
+
+@media (max-width: 992px) {
+    .navbar-expand-lg {
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+    }
+    #main {
+        margin-left: 0px;
+    }
 }
