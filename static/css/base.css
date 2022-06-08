@@ -26,6 +26,15 @@ p {
     font-weight: 200;
 }
 
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #000;
+}
+
 /* ---------------------------------------------------------------- NAVIGATION */
 .sidebar {
     height: 100%;
@@ -42,14 +51,14 @@ p {
 }
 
 .sidebar a {
-    width: 66%;
+    min-width: 165px;
+    max-width: 165px;
     margin: auto;
     text-decoration: none;
     font-family: 'Poppins', serif;
     font-size: 1rem;
     color: rgb(0, 0, 0);
     display: block;
-    transition: 0.3s;
     padding: 4px;
     padding-left: 20px;
     border-bottom: 1px solid rgb(126 126 126);
@@ -115,6 +124,12 @@ button:focus {
     background-color: #4d9959;
 }
 
+.header-image {
+    height: 160px;
+    width: 192px;
+    image-rendering: pixelated;
+}
+
 .store-item {
     transition: 0.2s;
 }
@@ -129,8 +144,15 @@ button:focus {
     image-rendering: pixelated;
 }
 
+.store-image-details {
+    height: 64px;
+    width: 64px;
+    image-rendering: pixelated;
+}
+
 .store-price {
     margin-left: auto;
+    font-weight: 500;
 }
 
 .store-price i {
