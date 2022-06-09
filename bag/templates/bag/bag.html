@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<main class="container">
+    <div class="d-flex align-items-center p-3 my-3 text-white bg-green rounded shadow-sm">
+        <div class="lh-1">
+            <h1 class="h6 mb-0 text-white lh-1">Your shopping bag</h1>
+            <small></small>
+        </div>
+    </div>
+
+    <div class="my-3 p-3 bg-body rounded shadow-sm">
+        <img class="store-image-details" src="/media/ui/bag.png" alt="A shopping bag">
+        <h6 class="border-bottom pb-2 mb-0"></h6>
+
+        {% if bag_item %}
+        <div class="d-flex pt-3 border-bottom store-item">
+            <p class="pb-3 mb-0 small lh-sm ">
+                <strong class="d-block text-gray-dark">Description</strong>
+                {{ product.description }}
+                {{ contexts.total }}
+            </p>
+        </div>
+        {% else %}
+        <div class="d-flex pt-3 border-bottom store-item">
+            <p class="pb-3 mb-0 small lh-sm ">
+                <strong class="d-block text-gray-dark">Your shopping bag is empty!</strong>
+                <a href="{% url 'store' %}">Go back to the store.</a>
+            </p>
+        </div>
+        {% endif %}
+
+        <small class="d-block text-end mt-3">
+            <a href="{% url 'store' %}">Back to store</a>
+          </small>
+    </div>
+</main>
+
+{% endblock %}

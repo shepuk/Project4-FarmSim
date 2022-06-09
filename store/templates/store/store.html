@@ -13,20 +13,49 @@
     </div>
 
     <div class="my-3 p-3 bg-body rounded shadow-sm">
-        <h6 class="border-bottom pb-2 mb-0">All items</h6>
+
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                All Items
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#">All Items</a></li>
+                <li><a class="dropdown-item" href="#">Seeds</a></li>
+                <li><a class="dropdown-item" href="#">Flowers</a></li>
+                <li><a class="dropdown-item" href="#">Tools</a></li>
+            </ul>
+        </div>
+
+        <a href="{% url 'view_bag' %}"><img class="shopping-bag" src="/media/ui/bag.png" alt="A shopping bag"></a>
 
         {% for product in products %}
-        <a href="{% url 'product_detail' product.id %}">
-            <div class="d-flex pt-3 border-bottom store-item">
-            <img class="store-image" src="{{ product.image.url }}" alt="{{ product.name }}">
+        <div class="d-flex pt-3 border-bottom store-item">
+            <a href="{% url 'product_detail' product.id %}">
+                <img class="store-image" src="{{ product.image.url }}" alt="{{ product.name }}">
+            </a>
             <p class="pb-3 mb-0 small lh-sm ">
                 <strong class="d-block text-gray-dark">{{ product.name }}</strong>
                 {{ product.description }}
             </p>
-            <p class="store-price">{{ product.price }}<i class="fa-solid fa-coins"></i></p>
-        </div>
-    </a>
-        {% endfor %}
+
+            <form class="form store-price" action="{% url 'add_to_bag' product.id %}" method="POST">
+                {% csrf_token %}
+
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text">Qty</span>
+                    <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99"
+                        data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                    <span class="input-group-text">{{ product.price }}</span>
+                    <span class="input-group-text"><input type="submit" value="Add to Bag"></span>
+                </div>
+
+        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+
+        </form>
+    </div>
+
+    {% endfor %}
 
     </div>
 </main>
