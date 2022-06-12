@@ -134,6 +134,10 @@ button:focus {
     transition: 0.2s;
 }
 
+.bag-item {
+    flex-direction: column;
+}
+
 .store-item:hover {
     background-color: #ebebeb;
 }

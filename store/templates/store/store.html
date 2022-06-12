@@ -8,7 +8,7 @@
     <div class="d-flex align-items-center p-3 my-3 text-white bg-green rounded shadow-sm">
         <div class="lh-1">
             <h1 class="h6 mb-0 text-white lh-1">General Store</h1>
-            <small>Seeds, tools, and more!</small>
+            <small>Seeds, tools, and more! Click a product for more info.</small>
         </div>
     </div>
 
@@ -27,16 +27,23 @@
             </ul>
         </div>
 
-        <a href="{% url 'view_bag' %}"><img class="shopping-bag" src="/media/ui/bag.png" alt="A shopping bag"></a>
+        <a href="{% url 'view_bag' %}">
+            <i class="fa-solid fa-cart-shopping"></i>
+            {% if total %}
+            ${{ total|floatformat:2 }}
+            {% else %}
+            $0.00
+            {% endif %}
+        </a>
 
         {% for product in products %}
         <div class="d-flex pt-3 border-bottom store-item">
             <a href="{% url 'product_detail' product.id %}">
                 <img class="store-image" src="{{ product.image.url }}" alt="{{ product.name }}">
             </a>
-            <p class="pb-3 mb-0 small lh-sm ">
+            <p class="pb-3 mb-0 small lh-sm">
                 <strong class="d-block text-gray-dark">{{ product.name }}</strong>
-                {{ product.description }}
+                {{ product.price }}
             </p>
 
             <form class="form store-price" action="{% url 'add_to_bag' product.id %}" method="POST">
@@ -44,20 +51,19 @@
 
                 <div class="input-group input-group-sm mb-3">
                     <span class="input-group-text">Qty</span>
-                    <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99"
-                        data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
-                    <span class="input-group-text">{{ product.price }}</span>
+                    <input class="form-control qty_input qty-input" type="number" name="quantity" value="1" min="1"
+                        max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                    <span class="input-group-text total-price">{{ product.price }}</span>
                     <span class="input-group-text"><input type="submit" value="Add to Bag"></span>
                 </div>
 
-        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                <input type="hidden" name="redirect_url" value="{{ request.path }}">
 
-        </form>
-    </div>
+            </form>
+        </div>
 
-    {% endfor %}
+        {% endfor %}
 
     </div>
 </main>
-
 {% endblock %}

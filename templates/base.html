@@ -49,6 +49,16 @@
 
         <nav class="navbar navbar-expand-lg navbar-fixed-top">
           <div class="openbtn" onclick="openNav();"><i class="fa-solid fa-bars"></i></div>
+
+          <a href="{% url 'view_bag' %}">
+            <i class="fa-solid fa-cart-shopping"></i>
+            {% if total %}
+            ${{ total|floatformat:2 }}
+            {% else %}
+            $0.00
+            {% endif %}
+        </a>
+
         </nav>
 
         {% if messages %}

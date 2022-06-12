@@ -15,19 +15,20 @@
         <img class="store-image-details" src="/media/ui/bag.png" alt="A shopping bag">
         <h6 class="border-bottom pb-2 mb-0"></h6>
 
-        {% if bag_item %}
-        <div class="d-flex pt-3 border-bottom store-item">
-            <p class="pb-3 mb-0 small lh-sm ">
-                <strong class="d-block text-gray-dark">Description</strong>
-                {{ product.description }}
-                {{ contexts.total }}
+        {% if bag_items %}
+        {% for item in bag_items %}
+        <div class="d-flex pt-3 border-bottom store-item bag-item">
+            <p class="mb-0 small lh-sm ">
+                <strong class="d-block text-gray-dark">{{ item.product.name }}</strong>
+                Qty: {{ item.quantity }}
             </p>
+            <p class="small lh-sm">{{ item.product.price }}</p>
         </div>
+        {% endfor %}
         {% else %}
         <div class="d-flex pt-3 border-bottom store-item">
             <p class="pb-3 mb-0 small lh-sm ">
                 <strong class="d-block text-gray-dark">Your shopping bag is empty!</strong>
-                <a href="{% url 'store' %}">Go back to the store.</a>
             </p>
         </div>
         {% endif %}
