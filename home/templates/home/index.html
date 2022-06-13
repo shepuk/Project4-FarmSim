@@ -5,67 +5,70 @@
 
 <main class="container">
   <div class="d-flex align-items-center p-3 my-3 text-white bg-green rounded shadow-sm">
-      <div class="lh-1">
-          <h1 class="h6 mb-0 text-white lh-1">Sunrise Farm</h1>
-          <small>Access your farm, go shopping, or check your inventory from here!</small>
-      </div>
+    <div class="lh-1">
+      <h1 class="h6 mb-0 text-white lh-1">Sunrise Farm</h1>
+      <small>Access your farm, go shopping, or check your inventory from here!</small>
+    </div>
   </div>
 
   <div class="my-3 p-3 bg-body rounded shadow-sm">
     <img src="/media/ui/player_house.gif" alt="A farm house">
-      <h6 class="border-bottom pb-2 mb-0">Your Farm</h6>
+    <h6 class="border-bottom pb-2 mb-0">Your Farm</h6>
+
+    <a href="{% url 'farm' %}">
       <div class="d-flex pt-3 border-bottom store-item">
-          <img class="store-image" src="/media/ui/carrot.png" alt="A carrot icon">
-          <p class="pb-3 mb-0 small lh-sm ">
-              <strong class="d-block text-gray-dark">Crops</strong>
-              Grow, harvest and monitor your crops.
-          </p>
-          <p class="store-price">Active:</p>
-        </div>
+        <img class="store-image" src="/media/ui/carrot.png" alt="A carrot icon">
+        <p class="pb-3 mb-0 small lh-sm ">
+          <strong class="d-block text-gray-dark">Crops</strong>
+          Grow, harvest and monitor your crops.
+        </p>
+        <p class="store-price">Active:</p>
+      </div>
+    </a>
 
-        <div class="d-flex pt-3 border-bottom store-item">
-          <img class="store-image" src="/media/ui/blue_flower.png" alt="A carrot icon">
-          <p class="pb-3 mb-0 small lh-sm ">
-              <strong class="d-block text-gray-dark">Garden</strong>
-              Look after a beautiful flower patch.
-          </p>
-          <p class="store-price">Active:</p>
-        </div>
+    <div class="d-flex pt-3 border-bottom store-item">
+      <img class="store-image" src="/media/ui/blue_flower.png" alt="A carrot icon">
+      <p class="pb-3 mb-0 small lh-sm ">
+        <strong class="d-block text-gray-dark">Garden</strong>
+        Look after a beautiful flower patch.
+      </p>
+      <p class="store-price">Active:</p>
+    </div>
 
-        <div class="d-flex pt-3 border-bottom store-item">
-          <img class="store-image" src="/media/axe.png" alt="A carrot icon">
-          <p class="pb-3 mb-0 small lh-sm ">
-              <strong class="d-block text-gray-dark">Inventory</strong>
-              See your currently held seeds, tools and more.
-          </p>
-        </div>
+    <div class="d-flex pt-3 border-bottom store-item">
+      <img class="store-image" src="/media/axe.png" alt="A carrot icon">
+      <p class="pb-3 mb-0 small lh-sm ">
+        <strong class="d-block text-gray-dark">Inventory</strong>
+        See your currently held seeds, tools and more.
+      </p>
+    </div>
   </div>
 
   <div class="my-3 p-3 bg-body rounded shadow-sm">
     <img src="/media/ui/market_sign.gif" alt="A store building">
-      <h6 class="border-bottom pb-2 mb-0">Go Out</h6>
+    <h6 class="border-bottom pb-2 mb-0">Head Out</h6>
 
-      <a href="{% url 'store' %}">
+    <a href="{% url 'store' %}">
       <div class="d-flex pt-3 border-bottom store-item">
-          <img class="store-image" src="/media/ui/carrot.png" alt="A carrot icon">
-          <p class="pb-3 mb-0 small lh-sm ">
-              <strong class="d-block text-gray-dark">Store</strong>
-              Browse, buy and sell items.
-          </p>
-          <p class="store-price"></p>
-        </div>
-      </a>
+        <img class="store-image" src="/media/ui/carrot.png" alt="A carrot icon">
+        <p class="pb-3 mb-0 small lh-sm ">
+          <strong class="d-block text-gray-dark">Store</strong>
+          Browse, buy and sell items.
+        </p>
+        <p class="store-price"></p>
+      </div>
+    </a>
 
-      <a href="#">
-        <div class="d-flex pt-3 border-bottom store-item">
-            <img class="store-image" src="/media/ui/carrot.png" alt="A carrot icon">
-            <p class="pb-3 mb-0 small lh-sm ">
-                <strong class="d-block text-gray-dark">Explore</strong>
-                Go foraging and gather materials.
-            </p>
-            <p class="store-price"></p>
-          </div>
-        </a>
+    <a href="#">
+      <div class="d-flex pt-3 border-bottom store-item">
+        <img class="store-image" src="/media/ui/carrot.png" alt="A carrot icon">
+        <p class="pb-3 mb-0 small lh-sm ">
+          <strong class="d-block text-gray-dark">Explore</strong>
+          Go foraging and gather materials.
+        </p>
+        <p class="store-price"></p>
+      </div>
+    </a>
 
   </div>
 </main>

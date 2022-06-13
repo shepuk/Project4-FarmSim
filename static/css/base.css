@@ -174,6 +174,95 @@ button:focus {
     image-rendering: pixelated;
 }
 
+/* ---------------------------------------------------- FARM GRID */
+
+.field-container {
+    padding: 0;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-auto-columns: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    max-width: 700px;
+    z-index: -10;
+}
+
+.field-background {
+    grid-area: 1 / 1 / 3 / 5;
+    display: flex;
+    justify-content: center;
+}
+
+.field-background img {
+    width: 108%;
+    margin: auto;
+    overflow: visible
+}
+
+.plant1 {
+    grid-area: 1 / 1 / 2 / 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.plant2 {
+    grid-area: 1 / 2 / 2 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.plant3 {
+    grid-area: 1 / 3 / 2 / 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.plant4 {
+    grid-area: 1 / 4 / 2 / 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.plant5 {
+    grid-area: 2 / 1 / 3 / 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.plant6 {
+    grid-area: 2 / 2 / 3 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.plant7 {
+    grid-area: 2 / 3 / 3 / 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.plant8 {
+    grid-area: 2 / 4 / 3 / 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.plant1 img, .plant2 img, .plant3 img, .plant4 img, .plant5 img, .plant6 img, .plant7 img, .plant8 img {
+    width: 40%;
+    image-rendering: pixelated;
+}
+
+
 @media (max-width: 992px) {
 
     .sidebar {
