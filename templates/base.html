@@ -2,79 +2,96 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-    {% block core_meta %}
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% endblock %}
+  {% block core_meta %}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% endblock %}
 
-    {% block extra_meta %}
-    {% endblock %}
+  {% block extra_meta %}
+  {% endblock %}
 
-    {% block core_css %}
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    {% endblock %}
+  {% block core_css %}
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  {% endblock %}
 
-    {% block extra_css %}
-    {% endblock %}
+  {% block extra_css %}
+  {% endblock %}
 
-    {% block core_js %}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="{% static 'js/sidebar.js' %}"></script>
-    {% endblock %}
+  {% block core_js %}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="{% static 'js/sidebar.js' %}"></script>
+  {% endblock %}
 
-    {% block extra_js %}
-    {% endblock %}
+  {% block extra_js %}
+  {% endblock %}
 
-    <title>Sunrise Farm {% block extra_title %} {% endblock %}</title>
+  <title>Sunrise Farm {% block extra_title %} {% endblock %}</title>
 </head>
+
 <body>
 
-    <div id="mySidebar" class="sidebar">
-        <div class="logo"><img src="/media/ui/sunrise-logo.png" alt=""></div>
-        <a href="#">Login / Register</a>
-        <a href="{% url 'home' %}">My Farm</a>
-        <a href="{% url 'store' %}">Visit Town</a>
-        <a href="#">My Account</a>
-        <a href="#">Help</a>
-        <a href="#">About</a>
-      </div>
-      
-      <div id="main">
+  <div id="mySidebar" class="sidebar">
+    <div class="logo"><img src="/media/ui/sunrise-logo.png" alt=""></div>
+    {% if request.user.is_authenticated %}
+    {% if request.user.is_superuser %}
+    <a href="" class="">Product Management</a>
+    {% endif %}
+    <a href="{% url 'profile' %}" class="">My Profile</a>
+    <a href="{% url 'account_logout' %}" class="">Logout</a>
+    {% else %}
+    <a href="{% url 'account_signup' %}" class="">Register</a>
+    <a href="{% url 'account_login' %}" class="">Login</a>
+    {% endif %}
+    <a href="#">Login / Register</a>
+    <a href="{% url 'home' %}">My Farm</a>
+    <a href="{% url 'store' %}">Visit Town</a>
+    <a href="{% url 'profile' %}">My Account</a>
+    <a href="#">Help</a>
+    <a href="#">About</a>
+  </div>
 
-        <nav class="navbar navbar-expand-lg navbar-fixed-top">
-          <div class="openbtn" onclick="openNav();"><i class="fa-solid fa-bars"></i></div>
+  <div id="main">
 
-          <a href="{% url 'view_bag' %}">
-            <i class="fa-solid fa-cart-shopping"></i>
-            {% if total %}
-            ${{ total|floatformat:2 }}
-            {% else %}
-            $0.00
-            {% endif %}
-        </a>
+    <nav class="navbar navbar-expand-lg navbar-fixed-top">
+      <div class="openbtn" onclick="openNav();"><i class="fa-solid fa-bars"></i></div>
 
-        </nav>
-
-        {% if messages %}
-        <div class="message-container"></div>
+      <a href="{% url 'view_bag' %}">
+        <i class="fa-solid fa-cart-shopping"></i>
+        {% if total %}
+        ${{ total|floatformat:2 }}
+        {% else %}
+        $0.00
         {% endif %}
-    
-        {% block page_header %}
-        {% endblock %}
-    
-        {% block content %}
-        {% endblock %}
+      </a>
 
-      </div>
+    </nav>
 
-    {% block postloadjs %}
+    {% if messages %}
+    <div class="message-container"></div>
+    {% endif %}
+
+    {% block page_header %}
     {% endblock %}
-    
+
+    {% block content %}
+    {% endblock %}
+
+  </div>
+
+  {% block postloadjs %}
+  {% endblock %}
+
 </body>
+
 </html>

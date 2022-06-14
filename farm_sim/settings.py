@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'store',
     'bag',
     'farm',
+    'profiles',
 ]
 
 MIDDLEWARE = [
