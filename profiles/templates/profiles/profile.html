@@ -4,8 +4,10 @@
 {% block content %}
 
 {{ user.username }}
+{{ user.email }}
 {{ user.profile.bio }}
 {{ user.profile.is_premium }}
 {{ user.profile.coins }}
+{{ user.profile.inventory }}
 
 {% endblock %}

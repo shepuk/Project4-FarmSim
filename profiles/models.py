@@ -2,13 +2,14 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-from picklefield.fields import PickledObjectField
+import jsonfield
 
 class Profile(models.Model):
     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
     bio = models.TextField(max_length=500, default="My Bio")
     is_premium = models.TextField(default="no")
     coins = models.DecimalField(default=50.00, max_digits=5, decimal_places=2)
+    inventory = jsonfield.JSONField(null=True)
     crop1 = models.TextField(null=True)
     crop2 = models.TextField(null=True)
     crop3 = models.TextField(null=True)
@@ -20,6 +21,12 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.user.username
+
+
+inv = Profile()
+inv.inventory = { "carrot": 0, 
+                  "pear": 0, 
+                  "sprout": 0}
 
 
 @receiver(post_save, sender=User)
