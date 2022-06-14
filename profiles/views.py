@@ -1,10 +1,14 @@
 from django.shortcuts import render
+from .models import Inventory
 
 
 def profile(request):
     """ Display the user's profile. """
 
-    template = 'profiles/profile.html'
-    context = {}
+    items = Inventory.objects.all()
 
-    return render(request, template)
+    context = {
+        'items': items,
+    }
+
+    return render(request, 'profiles/profile.html', context)

@@ -8,6 +8,12 @@
 {{ user.profile.bio }}
 {{ user.profile.is_premium }}
 {{ user.profile.coins }}
-{{ user.profile.inventory }}
+
+spacer
+
+{{ user.inventory.owner }}
+{{ user.inventory.item }}
+{{ user.inventory.quantity }}
+
 
 {% endblock %}
