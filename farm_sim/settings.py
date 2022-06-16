@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'bag',
     'farm',
     'profiles',
+    'inventory',
 ]
 
 MIDDLEWARE = [

@@ -35,14 +35,16 @@
       <p class="store-price">Active:</p>
     </div>
 
-    <div class="d-flex pt-3 border-bottom store-item">
-      <img class="store-image" src="/media/axe.png" alt="A carrot icon">
-      <p class="pb-3 mb-0 small lh-sm ">
-        <strong class="d-block text-gray-dark">Inventory</strong>
-        See your currently held seeds, tools and more.
-      </p>
-    </div>
+    <a href="{% url 'inventory' %}">
+      <div class="d-flex pt-3 border-bottom store-item">
+        <img class="store-image" src="/media/axe.png" alt="A carrot icon">
+        <p class="pb-3 mb-0 small lh-sm ">
+          <strong class="d-block text-gray-dark">Inventory</strong>
+          See your currently held seeds, tools and more.
+        </p>
+      </div>
   </div>
+  </a>
 
   <div class="my-3 p-3 bg-body rounded shadow-sm">
     <img src="/media/ui/market_sign.gif" alt="A store building">

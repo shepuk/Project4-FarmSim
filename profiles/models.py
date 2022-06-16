@@ -21,13 +21,6 @@ class Profile(models.Model):
     def __str__(self):
         return self.name.username
 
-
-class Inventory(models.Model):
-    owner = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
-    item = models.OneToOneField(Product, null=True, on_delete=models.CASCADE)
-    quantity = models.DecimalField(default=5.00, max_digits=5, decimal_places=2)
-
-
 @receiver(post_save, sender=User)
 def create_or_update_user_profile(sender, instance, created, **kwargs):
     """
@@ -39,15 +32,3 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
     else:
         Profile.objects.create(user=instance)
         instance.profile.save()
-
-@receiver(post_save, sender=User)
-def create_or_update_user_inventory(sender, instance, created, **kwargs):
-    """
-    Create or update the user profile
-    """
-    if instance.inventory:
-        instance.inventory.save()
-        return
-    else:
-        Inventory.objects.create(user=instance)
-        instance.inventory.save()

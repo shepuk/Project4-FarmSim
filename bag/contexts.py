@@ -6,7 +6,7 @@ from store.models import Product
 def bag_contents(request):
 
     bag_items = []
-    total = 999
+    total = 0
     product_count = 0
     bag = request.session.get('bag', {})
 
