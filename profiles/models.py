@@ -5,21 +5,21 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE, related_name='profile')
     bio = models.TextField(max_length=500, default="My Bio")
     is_premium = models.TextField(default="no")
-    coins = models.DecimalField(default=50.00, max_digits=5, decimal_places=2)
-    crop1 = models.TextField(null=True)
-    crop2 = models.TextField(null=True)
-    crop3 = models.TextField(null=True)
-    crop4 = models.TextField(null=True)
-    crop5 = models.TextField(null=True)
-    crop6 = models.TextField(null=True)
-    crop7 = models.TextField(null=True)
-    crop8 = models.TextField(null=True)
+    coins = models.DecimalField(max_digits=5, decimal_places=2)
+    crop1 = models.TextField(null=True, blank=True)
+    crop2 = models.TextField(null=True, blank=True)
+    crop3 = models.TextField(null=True, blank=True)
+    crop4 = models.TextField(null=True, blank=True)
+    crop5 = models.TextField(null=True, blank=True)
+    crop6 = models.TextField(null=True, blank=True)
+    crop7 = models.TextField(null=True, blank=True)
+    crop8 = models.TextField(null=True, blank=True)
 
     def __str__(self):
-        return self.name.username
+        return self.user.username
 
 @receiver(post_save, sender=User)
 def create_or_update_user_profile(sender, instance, created, **kwargs):

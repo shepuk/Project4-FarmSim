@@ -44,19 +44,14 @@
   <div id="mySidebar" class="sidebar">
     <div class="logo"><img src="/media/ui/sunrise-logo.png" alt=""></div>
     {% if request.user.is_authenticated %}
-    {% if request.user.is_superuser %}
-    <a href="" class="">Product Management</a>
-    {% endif %}
-    <a href="{% url 'profile' %}" class="">My Profile</a>
+    <a href="{% url 'home' %}">My Farm</a>
+    <a href="{% url 'store' %}">Visit Town</a>
+    <a href="{% url 'profile' %}">My Account</a>
     <a href="{% url 'account_logout' %}" class="">Logout</a>
     {% else %}
     <a href="{% url 'account_signup' %}" class="">Register</a>
     <a href="{% url 'account_login' %}" class="">Login</a>
     {% endif %}
-    <a href="#">Login / Register</a>
-    <a href="{% url 'home' %}">My Farm</a>
-    <a href="{% url 'store' %}">Visit Town</a>
-    <a href="{% url 'profile' %}">My Account</a>
     <a href="#">Help</a>
     <a href="#">About</a>
   </div>
@@ -65,15 +60,6 @@
 
     <nav class="navbar navbar-expand-lg navbar-fixed-top">
       <div class="openbtn" onclick="openNav();"><i class="fa-solid fa-bars"></i></div>
-
-      <a href="{% url 'view_bag' %}">
-        <i class="fa-solid fa-cart-shopping"></i>
-        {% if total %}
-        ${{ total|floatformat:2 }}
-        {% else %}
-        $0.00
-        {% endif %}
-      </a>
 
     </nav>
 

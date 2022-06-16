@@ -3,6 +3,35 @@
 
 {% block content %}
 
+<main class="container">
+    <div class="d-flex align-items-center p-3 my-3 text-white bg-green rounded shadow-sm">
+        <div class="lh-1">
+            <h1 class="h6 mb-0 text-white lh-1">Inventory</h1>
+            <small>Check all of your currently owned items from here.</small>
+        </div>
+    </div>
+
+    <div class="my-3 p-3 bg-body rounded shadow-sm">
+        <h6 class="border-bottom pb-2 mb-0">Your Inventory</h6>
+
+        {% for item in items %}
+        {% if item.owner == user %}
+        <a href="{% url 'product_detail' item.id %}">
+            <div class="d-flex pt-3 border-bottom store-item">
+                <img class="store-image-details" src="{{ product.item.image }}" alt="{{ item.name }}">
+                <p class="pb-3 mb-0 small lh-sm ">
+                    <strong class="d-block text-gray-dark">{{ item.item }}</strong>
+                    More info
+                </p>
+                <p class="store-price">Qty: {{ item.quantity }}</p>
+            </div>
+        </a>
+        {% endif %}
+        {% endfor %}
+
+</main>
+
+
 {% for x in items %}
 {% if x.owner == user %}
 {{ x.owner }}

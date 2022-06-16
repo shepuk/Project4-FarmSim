@@ -27,15 +27,6 @@
             </ul>
         </div>
 
-        <a href="{% url 'view_bag' %}">
-            <i class="fa-solid fa-cart-shopping"></i>
-            {% if total %}
-            ${{ total|floatformat:2 }}
-            {% else %}
-            $0.00
-            {% endif %}
-        </a>
-
         {% for product in products %}
         <div class="d-flex pt-3 border-bottom store-item">
             <a href="{% url 'product_detail' product.id %}">
@@ -46,15 +37,15 @@
                 {{ product.price }}
             </p>
 
-            <form class="form store-price" action="{% url 'add_to_bag' product.id %}" method="POST">
+            <form class="form store-price" action="{% url 'add_to_user_inventory' product.id %}" method="POST">
                 {% csrf_token %}
 
                 <div class="input-group input-group-sm mb-3">
                     <span class="input-group-text">Qty</span>
                     <input class="form-control qty_input qty-input" type="number" name="quantity" value="1" min="1"
-                        max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                        max="99" data-item_id="{{ product.name }}" id="id_qty_{{ product.id }}">
                     <span class="input-group-text total-price">{{ product.price }}</span>
-                    <span class="input-group-text"><input type="submit" value="Add to Bag"></span>
+                    <span class="input-group-text"><input type="submit" value="Buy"></span>
                 </div>
 
                 <input type="hidden" name="redirect_url" value="{{ request.path }}">

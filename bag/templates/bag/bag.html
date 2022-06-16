@@ -23,6 +23,8 @@
                 Qty: {{ item.quantity }}
             </p>
             <p class="small lh-sm">{{ item.product.price }}</p>
+            <a class="update-link text-info"><small>Update</small></a>
+            <a class="remove-item text-danger" id="remove_{{ item.item_id }}"><small>Remove</small></a>
         </div>
         {% endfor %}
         {% else %}
@@ -38,5 +40,27 @@
           </small>
     </div>
 </main>
+
+<script type="text/javascript">
+    // Update quantity on click
+    $('.update-link').click(function(e) {
+        var form = $(this).prev('.update-form');
+        form.submit();
+    })
+
+    // Remove item and reload on click
+    $('.remove-item').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var size = $(this).data('size');
+        var url = `/bag/remove/${itemId}`;
+        var data = {'csrfmiddlewaretoken': csrfToken, 'size': size};
+
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+    })
+</script>
 
 {% endblock %}
