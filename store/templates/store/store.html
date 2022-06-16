@@ -29,7 +29,7 @@
 
         {% for product in products %}
         <div class="d-flex pt-3 border-bottom store-item">
-            <a href="{% url 'product_detail' product.id %}">
+            <a href="{% url 'product_detail' product.name %}">
                 <img class="store-image" src="{{ product.image.url }}" alt="{{ product.name }}">
             </a>
             <p class="pb-3 mb-0 small lh-sm">

@@ -15,9 +15,10 @@ def store(request):
     return render(request, 'store/store.html', context)
 
 
-def product_detail(request, product_id):
+def product_detail(request, product_name):
 
-    product = get_object_or_404(Product, pk=product_id)
+
+    product = get_object_or_404(Product, name=product_name)
 
     context = {
         'product': product,

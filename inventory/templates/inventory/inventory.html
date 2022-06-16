@@ -16,7 +16,7 @@
 
         {% for item in items %}
         {% if item.owner == user %}
-        <a href="{% url 'product_detail' item.id %}">
+        <a href="{% url 'product_detail' item.item %}">
             <div class="d-flex pt-3 border-bottom store-item">
                 <img class="store-image-details" src="{{ product.item.image }}" alt="{{ item.name }}">
                 <p class="pb-3 mb-0 small lh-sm ">
@@ -29,15 +29,9 @@
         {% endif %}
         {% endfor %}
 
+        <small class="d-block text-end mt-3">
+            <a href="{% url 'home' %}">Back to farm</a>
+          </small>
 </main>
-
-
-{% for x in items %}
-{% if x.owner == user %}
-{{ x.owner }}
-{{ x.item }}
-{{ x.quantity }}
-{% endif %}
-{% endfor %}
 
 {% endblock %}
