@@ -1,3 +1,13 @@
 from django.contrib import admin
+from .models import Farm
 
-# Register your models here.
+
+class FarmAdmin(admin.ModelAdmin):
+    list_display = (
+        'user',
+    )
+
+    ordering = ('user',)
+
+
+admin.site.register(Farm, FarmAdmin)

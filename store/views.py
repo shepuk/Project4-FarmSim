@@ -44,7 +44,7 @@ def add_to_user_inventory(request, product_id):
             currentuser.save()
             existingentry.save()
         else:
-            print('not enough coins')
+            print('not enough coins') #change this to toast message
     else:
         if item.price * quantity <= currentuser.coins:
             currentuser.coins = currentuser.coins - item.price * quantity
@@ -52,5 +52,5 @@ def add_to_user_inventory(request, product_id):
             newentry = Inventory(owner=owner, item=item, quantity=quantity)
             newentry.save()
         else:
-            print('not enough coins')
+            print('not enough coins') #change this to toast message
     return redirect(redirect_url)

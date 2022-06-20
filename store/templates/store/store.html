@@ -31,11 +31,13 @@
         <div class="d-flex pt-3 border-bottom store-item">
             <a href="{% url 'product_detail' product.name %}">
                 <img class="store-image" src="{{ product.image.url }}" alt="{{ product.name }}">
+                </a>
+                <a href="{% url 'product_detail' product.name %}">
+                <p class="pb-3 mb-0 small lh-sm">
+                    <strong class="d-block text-gray-dark">{{ product.name }}</strong>
+                    {{ product.price }}
+                </p>
             </a>
-            <p class="pb-3 mb-0 small lh-sm">
-                <strong class="d-block text-gray-dark">{{ product.name }}</strong>
-                {{ product.price }}
-            </p>
 
             <form class="form store-price" action="{% url 'add_to_user_inventory' product.id %}" method="POST">
                 {% csrf_token %}
@@ -44,7 +46,6 @@
                     <span class="input-group-text">Qty</span>
                     <input class="form-control qty_input qty-input" type="number" name="quantity" value="1" min="1"
                         max="99" data-item_id="{{ product.name }}" id="id_qty_{{ product.id }}">
-                    <span class="input-group-text total-price">{{ product.price }}</span>
                     <span class="input-group-text"><input type="submit" value="Buy"></span>
                 </div>
 

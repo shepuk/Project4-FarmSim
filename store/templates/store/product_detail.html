@@ -38,6 +38,13 @@
         </div>
         {% endif %}
 
+        <div class="d-flex pt-3 border-bottom store-item">
+            <p class="pb-3 mb-0 small lh-sm ">
+                <strong class="d-block text-gray-dark">Grow Time</strong>
+                {{ product.growtime }}
+            </p>
+        </div>
+
         <small class="d-block text-end mt-3">
             <a href="{% url 'store' %}">Back to store</a>
           </small>

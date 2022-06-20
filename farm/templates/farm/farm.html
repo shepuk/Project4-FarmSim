@@ -19,6 +19,7 @@
                 999
                 <strong class="d-block text-gray-dark">Active crops:</strong>
                 999
+                <strong class="d-block text-gray-dark">Ready for harvest:</strong>
             </p>
         </div>
 
@@ -27,7 +28,30 @@
                 <img src="/media/ui/field.png" alt="">
             </div>
             <div class="plant1">
-                <img src="/media/carrot_seed.png" alt="">
+                <div class="dropdown">
+                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Plant
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        {% for item in items %}
+                        {% if item.owner == user %}
+
+                        <li>
+                                <form class="form store-price" action="{% url 'plant_crop' item=item.item %}"
+                                    method="POST">
+                                    {% csrf_token %}
+                                    <button class="crop-button" type="submit">
+                                        {{ item.item }}
+                                        ({{item.quantity}})
+                                    </button>
+                                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                </form>
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
             </div>
             <div class="plant2">
                 <img src="/media/carrot_seed.png" alt="">
