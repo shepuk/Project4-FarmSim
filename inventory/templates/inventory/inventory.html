@@ -18,7 +18,11 @@
         {% if item.owner == user %}
         <a href="{% url 'product_detail' item.item %}">
             <div class="d-flex pt-3 border-bottom store-item">
-                <img class="store-image-details" src="{{ product.item.image }}" alt="{{ item.name }}">
+                {% for product in product %}
+                {% if product.name == item.item %}
+                <img class="store-image-details" src="{{ product.image.url }}" alt="{{ item.item }}">
+                {% endif %}
+                {% endfor %}
                 <p class="pb-3 mb-0 small lh-sm ">
                     <strong class="d-block text-gray-dark">{{ item.item }}</strong>
                     More info
