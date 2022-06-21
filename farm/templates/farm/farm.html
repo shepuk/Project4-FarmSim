@@ -29,6 +29,12 @@
             </div>
 
             <div class="plant1">
+                {% for farm in farms %}
+                {% if farm.user == user %}
+                {% if farm.crop1 %}
+                {{ farm.crop1 }}
+                {{ farm.crop1_harvest_time }}
+                {% else %}
                 <div class="dropdown">
                     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1"
                         data-bs-toggle="dropdown" aria-expanded="false">
@@ -50,11 +56,20 @@
                         </li>
                         {% endif %}
                         {% endfor %}
+                        <li><a href="{% url 'store' %}">Store</a></li>
                     </ul>
                 </div>
+                {% endif %}
+                {% endif %}
+                {% endfor %}
             </div>
 
             <div class="plant2">
+                {% for farm in farms %}
+                {% if farm.user == user %}
+                {% if farm.crop2 %}
+                {{ farm.crop2 }}
+                {% else %}
                 <div class="dropdown">
                     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1"
                         data-bs-toggle="dropdown" aria-expanded="false">
@@ -76,11 +91,20 @@
                         </li>
                         {% endif %}
                         {% endfor %}
+                        <li><a href="{% url 'store' %}">Store</a></li>
                     </ul>
                 </div>
+                {% endif %}
+                {% endif %}
+                {% endfor %}
             </div>
 
             <div class="plant3">
+                {% for farm in farms %}
+                {% if farm.user == user %}
+                {% if farm.crop3 %}
+                {{ farm.crop3 }}
+                {% else %}
                 <div class="dropdown">
                     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1"
                         data-bs-toggle="dropdown" aria-expanded="false">
@@ -102,11 +126,20 @@
                         </li>
                         {% endif %}
                         {% endfor %}
+                        <li><a href="{% url 'store' %}">Store</a></li>
                     </ul>
                 </div>
+                {% endif %}
+                {% endif %}
+                {% endfor %}
             </div>
 
             <div class="plant4">
+                {% for farm in farms %}
+                {% if farm.user == user %}
+                {% if farm.crop4 %}
+                {{ farm.crop4 }}
+                {% else %}
                 <div class="dropdown">
                     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1"
                         data-bs-toggle="dropdown" aria-expanded="false">
@@ -128,11 +161,20 @@
                         </li>
                         {% endif %}
                         {% endfor %}
+                        <li><a href="{% url 'store' %}">Store</a></li>
                     </ul>
                 </div>
+                {% endif %}
+                {% endif %}
+                {% endfor %}
             </div>
 
             <div class="plant5">
+                {% for farm in farms %}
+                {% if farm.user == user %}
+                {% if farm.crop5 %}
+                {{ farm.crop5 }}
+                {% else %}
                 <div class="dropdown">
                     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1"
                         data-bs-toggle="dropdown" aria-expanded="false">
@@ -154,11 +196,20 @@
                         </li>
                         {% endif %}
                         {% endfor %}
+                        <li><a href="{% url 'store' %}">Store</a></li>
                     </ul>
                 </div>
+                {% endif %}
+                {% endif %}
+                {% endfor %}
             </div>
 
             <div class="plant6">
+                {% for farm in farms %}
+                {% if farm.user == user %}
+                {% if farm.crop6 %}
+                {{ farm.crop6 }}
+                {% else %}
                 <div class="dropdown">
                     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1"
                         data-bs-toggle="dropdown" aria-expanded="false">
@@ -180,11 +231,20 @@
                         </li>
                         {% endif %}
                         {% endfor %}
+                        <li><a href="{% url 'store' %}">Store</a></li>
                     </ul>
                 </div>
+                {% endif %}
+                {% endif %}
+                {% endfor %}
             </div>
 
             <div class="plant7">
+                {% for farm in farms %}
+                {% if farm.user == user %}
+                {% if farm.crop7 %}
+                {{ farm.crop7 }}
+                {% else %}
                 <div class="dropdown">
                     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1"
                         data-bs-toggle="dropdown" aria-expanded="false">
@@ -206,11 +266,20 @@
                         </li>
                         {% endif %}
                         {% endfor %}
+                        <li><a href="{% url 'store' %}">Store</a></li>
                     </ul>
                 </div>
+                {% endif %}
+                {% endif %}
+                {% endfor %}
             </div>
 
             <div class="plant8">
+                {% for farm in farms %}
+                {% if farm.user == user %}
+                {% if farm.crop8 %}
+                {{ farm.crop8 }}
+                {% else %}
                 <div class="dropdown">
                     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1"
                         data-bs-toggle="dropdown" aria-expanded="false">
@@ -232,8 +301,12 @@
                         </li>
                         {% endif %}
                         {% endfor %}
+                        <li><a href="{% url 'store' %}">Store</a></li>
                     </ul>
                 </div>
+                {% endif %}
+                {% endif %}
+                {% endfor %}
             </div>
 
         </div>

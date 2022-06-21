@@ -10,9 +10,11 @@ from datetime import datetime, timedelta
 def farm (request):
 
     items = Inventory.objects.all()
+    farms = Farm.objects.all()
 
     context = {
         'items': items,
+        'farms': farms,
     }
 
     return render(request, 'farm/farm.html', context)
