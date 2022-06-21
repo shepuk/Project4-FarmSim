@@ -18,7 +18,7 @@ def farm (request):
     return render(request, 'farm/farm.html', context)
 
 
-def plant_crop(request, item):
+def plant_crop(request, item, cropslot):
 
     items = Inventory.objects.all()
 
@@ -26,20 +26,29 @@ def plant_crop(request, item):
     owner = request.user # get user
     redirect_url = request.POST.get('redirect_url')
     crop = Inventory.objects.get(owner=owner, item__name=item) # get item from user inventory
-    print(crop.item)
     product = get_object_or_404(Product, name=item) # get product for growtime ref.
 
-    crop.quantity = crop.quantity - 1
-    if crop.quantity < 1:
+    if crop.quantity >= 1:
+        crop.quantity = crop.quantity - 1
+        crop.save()
+    if crop.quantity <= 0:
         crop.delete()
 
-    plant_time = datetime.now() + timedelta(seconds=120)
+    # quickfix for UK time - need to add timezomeaware date generation (pytz)
+    harvest_time = datetime.now() + timedelta(hours=1, seconds=180)
 
-    cropplant = Farm(user=owner, crop1=item, crop1_harvest_time=plant_time)
-    crop.save()
+    if Farm.objects.filter(user=owner).exists():
+        farm = Farm.objects.get(user=owner)
+        setattr(farm, cropslot, item)
+        setattr(farm, "{}_harvest_time".format(cropslot), harvest_time)
 
+        farm.save()
+    else:
+        cropplant = Farm(user=owner, cropslot=item, cropslot_harvest_time=harvest_time)
+        cropplant.save()
 
     items = Inventory.objects.all()
+
     context = {
         'items': items,
     }

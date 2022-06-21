@@ -8,7 +8,7 @@ from datetime import datetime
 
 # Create your models here.
 class Farm(models.Model):
-    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE, related_name='farm')
+    user = models.ForeignKey(User, null=True, on_delete=models.CASCADE, related_name='farm')
     crop1 = models.TextField(null=True, blank=True)
     crop1_harvest_time = models.DateTimeField(null=True, blank=True)
     crop2 = models.TextField(null=True, blank=True)
