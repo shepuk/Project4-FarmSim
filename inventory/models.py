@@ -6,8 +6,9 @@ from store.models import Product
 
 class Inventory(models.Model):
     owner = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
-    item = models.ForeignKey(Product, null=True, blank=True, on_delete=models.SET_NULL)
+    item = models.ForeignKey(Product, null=True, blank=True, on_delete=models.SET_NULL, related_name='product')
     quantity = models.DecimalField(default=5.00, max_digits=5, decimal_places=0)
+
 
 
     def __str__(self):
