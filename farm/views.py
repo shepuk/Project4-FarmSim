@@ -11,11 +11,18 @@ def farm (request):
 
     items = Inventory.objects.all()
     farms = Farm.objects.all()
+    owner = request.user
 
     context = {
         'items': items,
         'farms': farms,
     }
+
+    if Farm.objects.filter(user=owner).exists():
+        print('test')
+    else:
+        cropplant = Farm(user=owner)
+        cropplant.save()
 
     return render(request, 'farm/farm.html', context)
 
@@ -41,12 +48,12 @@ def plant_crop(request, item, cropslot):
 
     if Farm.objects.filter(user=owner).exists():
         farm = Farm.objects.get(user=owner)
-        setattr(farm, cropslot, item)
+        setattr(farm, cropslot, product)
         setattr(farm, "{}_harvest_time".format(cropslot), harvest_time)
 
         farm.save()
     else:
-        cropplant = Farm(user=owner, cropslot=item, cropslot_harvest_time=harvest_time)
+        cropplant = Farm(user=owner, cropslot=product, cropslot_harvest_time=harvest_time)
         cropplant.save()
 
     items = Inventory.objects.all()

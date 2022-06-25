@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Inventory
 from .models import Product
+from farm.models import Farm
 
 
 def inventory(request):
