@@ -33,6 +33,8 @@
                 {% if farm.user == user %}
                 {% if farm.crop1 %}
                 <img class="store-image-details" src="{{ farm.crop1.image.url }}" alt="{{ farm.crop1 }}">
+                <div class="harvest-time" id="harvest-time">{{ farm.crop1_harvest_time }}</div>
+                <div class="harvest-time" id="harvest-time">{{ farm.crop1_plant_time }}</div>
                 {% else %}
                 <div class="dropdown">
                     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1"
@@ -68,6 +70,8 @@
                 {% if farm.user == user %}
                 {% if farm.crop2 %}
                 <img class="store-image-details" src="{{ farm.crop2.image.url }}" alt="{{ farm.crop2 }}">
+                <div class="harvest-time" id="harvest-time">{{ farm.crop2_harvest_time }}</div>
+                <div class="harvest-time" id="harvest-time">{{ farm.crop2_plant_time }}</div>
                 {% else %}
                 <div class="dropdown">
                     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1"
@@ -312,4 +316,8 @@
     </div>
 </main>
 
+{% block extra_js %}
+
+{% endblock %}
+<script src="{% static 'js/crop-timer.js' %}"></script>
 {% endblock %}

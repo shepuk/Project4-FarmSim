@@ -45,15 +45,17 @@ def plant_crop(request, item, cropslot):
 
     # quickfix for UK time - need to add timezomeaware date generation (pytz)
     harvest_time = datetime.now() + timedelta(hours=1, seconds=180)
+    plant_time = datetime.now() + timedelta(hours=1)
 
     if Farm.objects.filter(user=owner).exists():
         farm = Farm.objects.get(user=owner)
         setattr(farm, cropslot, product)
         setattr(farm, "{}_harvest_time".format(cropslot), harvest_time)
+        setattr(farm, "{}_plant_time".format(cropslot), plant_time)
 
         farm.save()
     else:
-        cropplant = Farm(user=owner, cropslot=product, cropslot_harvest_time=harvest_time)
+        cropplant = Farm(user=owner, cropslot=product, cropslot_harvest_time=harvest_time, cropslot_plant_time=plant_time)
         cropplant.save()
 
     items = Inventory.objects.all()
