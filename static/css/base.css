@@ -168,12 +168,6 @@ button:focus {
     float: right;
 }
 
-.shopping-bag {
-    height: 64px;
-    width: 64px;
-    image-rendering: pixelated;
-}
-
 /* ---------------------------------------------------- FARM GRID */
 
 .field-container {
@@ -299,9 +293,9 @@ button:focus {
     }
 }
 
-#progressBar {
+.progressContainer {
     height: 25px;
-    width: 70%;
+    width: 70%!important;
     background: #dbcdbf;
     border: 1px solid rgba(244, 241, 237, 0);
     margin: 0 auto;
@@ -309,9 +303,9 @@ button:focus {
     justify-content: flex-start;
 }
 
-#progress {
-    background: #b36b24;
-    color: #555;
+.progress {
+    background: #ececec;
+    color: rgb(0, 0, 0);
     width: 0%;
     transition: width 2s;
     display: flex;
