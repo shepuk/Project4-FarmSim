@@ -9,4 +9,4 @@ Fix - was using onetoonefield, instead of foreighkey
 Could not update/save model fields by using a variable as a field name in farm.views
 fix - string format method was used to insert the variable into the model query
 
-
+gold icon from <a href="https://www.flaticon.com/free-icons/coin" title="coin icons">Coin icons created by Freepik - Flaticon

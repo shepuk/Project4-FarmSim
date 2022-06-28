@@ -3,15 +3,15 @@
 
 h1 {
     font-family: 'Martel', serif;
-    font-weight: 800;
+    font-weight: 800!important;
     margin-top: 8px;
-    font-size: 1.5rem;
+    font-size: 26px!important;
 }
 
 h2 {
     font-family: 'Poppins', serif;
     font-weight: 300;
-    font-size: 1.2rem;
+    font-size: 2rem;
 }
 
 h3 {
@@ -21,9 +21,23 @@ h3 {
     font-weight: 400;
 }
 
+h6 {
+    font-family: 'Martel', serif;
+    color: #4d9959;
+    font-weight: 800!important;
+    font-size: 1.3rem;
+    font-weight: 400;   
+    margin-top: 10px;
+}
+
 p {
     font-family: 'Poppins', serif;
     font-weight: 200;
+}
+
+strong {
+    font-weight: 500;
+    font-size: 16px;
 }
 
 a {
@@ -33,6 +47,12 @@ a {
 
 a:hover {
     color: #000;
+}
+
+.coin {
+    height: 16px;
+    width: 16px;
+    margin-right: 3px;
 }
 
 /* ---------------------------------------------------------------- NAVIGATION */
@@ -46,26 +66,50 @@ a:hover {
     overflow-x: hidden;
     transition: 0.7s;
     -webkit-box-shadow: 20px 0px 42px -30px rgba(0, 0, 0, 0.23);
-    box-shadow: 20px 0px 42px -30px rgba(0, 0, 0, 0.23);
-    background-color: #fff0df;
+    box-shadow: 20px 0px 42px -30px rgba(0, 0, 0, 0.5);
+    background-color: #343444;
 }
 
 .sidebar a {
-    min-width: 165px;
-    max-width: 165px;
+    min-width: 183px;
+    max-width: 183px;
     margin: auto;
+    margin-top: 10px;
     text-decoration: none;
     font-family: 'Poppins', serif;
     font-size: 1rem;
-    color: rgb(0, 0, 0);
+    background-color: initial;
+    background-image: linear-gradient(-180deg, #00D775, #00BD68);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+    color: #FFFFFF;
+    cursor: pointer;
+    height: 44px;
+    line-height: 44px;
+    outline: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    pointer-events: auto;
+    position: relative;
+    text-align: center;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: top;
+    white-space: nowrap;
+    width: 100%;
+    z-index: 9;
+    border: 0;
+    transition: 0.3s;
     display: block;
-    padding: 4px;
-    padding-left: 20px;
-    border-bottom: 1px solid rgb(126 126 126);
+}
+
+.sidebar a:hover {
+    background-image: linear-gradient(-180deg, #27eb93, #27ca81);
 }
 
 .navbar {
-    background-color: #edf2f4;
+    background: rgb(217, 217, 217);
 }
 
 .logo {
@@ -77,17 +121,8 @@ a:hover {
 .logo img {
     max-width: 100%;
     max-height: 100%;
-}
-
-.sidebar a:hover {
-    color: #777777;
-}
-
-i {
-    text-decoration: none;
-    font-size: 25px;
+    margin: auto;
     display: block;
-    transition: 0.3s;
 }
 
 .openbtn {
@@ -107,7 +142,7 @@ button:focus {
     transition: margin-left .7s;
     padding-top: 0px;
     margin-left: 250px;
-    background-color: #edf2f4;
+    background: rgb(217, 217, 217);
     min-height: 100vh;
 }
 
@@ -122,6 +157,7 @@ button:focus {
 
 .bg-green {
     background-color: #4d9959;
+    background-image: linear-gradient(-180deg, #00D775, #00BD68);
 }
 
 .header-image {
@@ -130,12 +166,27 @@ button:focus {
     image-rendering: pixelated;
 }
 
+.btn-secondary {
+    background-color: #4d9959;
+    background-image: linear-gradient(-180deg, #00D775, #00BD68)!important;
+    border: none!important;
+    margin: 15px;
+    margin-bottom: 20px;
+}
+
+.store-headers {
+    display: flex;
+}
+
 .store-item {
     transition: 0.2s;
 }
 
-.bag-item {
-    flex-direction: column;
+.buy-button {
+    border: none;
+    background: transparent;
+    width: 100%;
+    height: 100%;
 }
 
 .store-item:hover {
@@ -143,8 +194,8 @@ button:focus {
 }
 
 .store-image {
-    height: 32px;
-    width: 32px;
+    height: 40px;
+    width: 40px;
     image-rendering: pixelated;
 }
 
@@ -168,7 +219,7 @@ button:focus {
     float: right;
 }
 
-/* ---------------------------------------------------- FARM GRID */
+/* ---------------------------------------------------- FARM & FARM GRID */
 
 .field-container {
     padding: 0;
@@ -275,24 +326,6 @@ button:focus {
 	outline: inherit;
 }
 
-
-@media (max-width: 992px) {
-
-    .sidebar {
-        width: 0px;
-    }
-
-    .openbtn {
-        flex-wrap: nowrap;
-        justify-content: flex-end;
-        margin-left: auto;
-    }
-
-    #main {
-        margin-left: 0px;
-    }
-}
-
 .progressContainer {
     height: 25px;
     width: 70%!important;
@@ -311,4 +344,22 @@ button:focus {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+@media (max-width: 992px) {
+
+    .sidebar {
+        width: 0px;
+    }
+
+    .openbtn {
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        margin-left: auto;
+    }
+
+    #main {
+        margin-left: 0px;
+    }
 }
