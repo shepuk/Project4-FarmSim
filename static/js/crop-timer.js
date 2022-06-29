@@ -58,7 +58,6 @@ $(document).ready(function () {
       var p = Math.round(timeBetweenStartAndToday / timeBetweenStartAndEnd * 100);
 
       bar.html(p + '%');
-      //bar.width(p + '%');
 
     }
 

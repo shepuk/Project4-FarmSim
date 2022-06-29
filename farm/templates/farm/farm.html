@@ -37,7 +37,6 @@
                 <div class="plant-time">{{ farm.crop1_plant_time|date:"F d, Y, G:i:s a" }}</div>
 
                 <div class="progressContainer">
-                    <p class="progress"></p>
                 </div>
 
                 {% else %}
@@ -79,7 +78,6 @@
                 <div class="plant-time">{{ farm.crop2_plant_time|date:"F d, Y, G:i:s a" }}</div>
 
                 <div class="progressContainer">
-                    <p class="progress"></p>
                 </div>
 
                 {% else %}
@@ -121,7 +119,6 @@
                 <div class="plant-time">{{ farm.crop3_plant_time|date:"F d, Y, G:i:s a" }}</div>
 
                 <div class="progressContainer">
-                    <p class="progress"></p>
                 </div>
 
                 {% else %}
@@ -154,16 +151,15 @@
                 {% endfor %}
             </div>
 
-            <div class="plant4">
+            <div class="plant4 plant">
                 {% for farm in farms %}
                 {% if farm.user == user %}
                 {% if farm.crop4 %}
                 <img class="store-image-details" src="{{ farm.crop4.image.url }}" alt="{{ farm.crop4 }}">
-                <div class="harvest-time" id="harvest-time">{{ farm.crop4_harvest_time }}</div>
-                <div class="plant-time" id="plant-time">{{ farm.crop4_plant_time }}</div>
+                <div class="harvest-time" id="harvest-time">{{ farm.crop4_harvest_time|date:"F d, Y, G:i:s a" }}</div>
+                <div class="plant-time" id="plant-time">{{ farm.crop4_plant_time|date:"F d, Y, G:i:s a" }}</div>
 
                 <div class="progressContainer">
-                    <p class="progress"></p>
                 </div>
 
                 {% else %}
@@ -196,11 +192,17 @@
                 {% endfor %}
             </div>
 
-            <div class="plant5">
+            <div class="plant5 plant">
                 {% for farm in farms %}
                 {% if farm.user == user %}
                 {% if farm.crop5 %}
                 <img class="store-image-details" src="{{ farm.crop5.image.url }}" alt="{{ farm.crop5 }}">
+                <div class="harvest-time" id="harvest-time">{{ farm.crop5_harvest_time|date:"F d, Y, G:i:s a" }}</div>
+                <div class="plant-time" id="plant-time">{{ farm.crop5_plant_time|date:"F d, Y, G:i:s a" }}</div>
+
+                <div class="progressContainer">
+                </div>
+
                 {% else %}
                 <div class="dropdown">
                     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1"
@@ -231,11 +233,17 @@
                 {% endfor %}
             </div>
 
-            <div class="plant6">
+            <div class="plant6 plant">
                 {% for farm in farms %}
                 {% if farm.user == user %}
                 {% if farm.crop6 %}
                 <img class="store-image-details" src="{{ farm.crop6.image.url }}" alt="{{ farm.crop6 }}">
+                <div class="harvest-time" id="harvest-time">{{ farm.crop6_harvest_time|date:"F d, Y, G:i:s a" }}</div>
+                <div class="plant-time" id="plant-time">{{ farm.crop6_plant_time|date:"F d, Y, G:i:s a" }}</div>
+
+                <div class="progressContainer">
+                </div>
+
                 {% else %}
                 <div class="dropdown">
                     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1"
@@ -266,11 +274,17 @@
                 {% endfor %}
             </div>
 
-            <div class="plant7">
+            <div class="plant7 plant">
                 {% for farm in farms %}
                 {% if farm.user == user %}
                 {% if farm.crop7 %}
                 <img class="store-image-details" src="{{ farm.crop7.image.url }}" alt="{{ farm.crop7 }}">
+                <div class="harvest-time" id="harvest-time">{{ farm.crop7_harvest_time|date:"F d, Y, G:i:s a" }}</div>
+                <div class="plant-time" id="plant-time">{{ farm.crop7_plant_time|date:"F d, Y, G:i:s a" }}</div>
+
+                <div class="progressContainer">
+                </div>
+
                 {% else %}
                 <div class="dropdown">
                     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1"
@@ -301,11 +315,17 @@
                 {% endfor %}
             </div>
 
-            <div class="plant8">
+            <div class="plant8 plant">
                 {% for farm in farms %}
                 {% if farm.user == user %}
                 {% if farm.crop8 %}
                 <img class="store-image-details" src="{{ farm.crop8.image.url }}" alt="{{ farm.crop8 }}">
+                <div class="harvest-time" id="harvest-time">{{ farm.crop8_harvest_time|date:"F d, Y, G:i:s a" }}</div>
+                <div class="plant-time" id="plant-time">{{ farm.crop8_plant_time|date:"F d, Y, G:i:s a" }}</div>
+
+                <div class="progressContainer">
+                </div>
+
                 {% else %}
                 <div class="dropdown">
                     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1"

@@ -108,14 +108,26 @@ a:hover {
     background-image: linear-gradient(-180deg, #27eb93, #27ca81);
 }
 
+.user-card {
+    height: 88px!important;
+}
+
+.user-card p {
+    margin-bottom: 0;
+    line-height: 25px;
+    font-weight: 400;
+}
+
 .navbar {
     background: rgb(217, 217, 217);
 }
 
 .logo {
-    margin: 10px auto;
+    margin: auto;
     width: 230px;
     height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .logo img {
@@ -126,16 +138,29 @@ a:hover {
 }
 
 .openbtn {
-    font-size: 20px;
+    font-size: 25px;
     cursor: pointer;
     padding: 10px 15px;
     border: none;
     padding: 10px, 15px, 10px, 0px;
+    margin-right: 20px;
+}
+
+.openbtn-mobile {
+    display: none;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    margin-left: auto;
 }
 
 .openbtn:hover,
 button:focus {
     outline: none;
+    color: #00BD68;
+}
+
+.nav-coin {
+    margin-left: 10px;
 }
 
 #main {
@@ -327,25 +352,17 @@ button:focus {
 }
 
 .progressContainer {
-    height: 25px;
-    width: 70%!important;
-    background: #dbcdbf;
-    border: 1px solid rgba(244, 241, 237, 0);
-    margin: 0 auto;
-    display: flex;
-    justify-content: flex-start;
+    font-weight: 600;
+    background-color: #4d9959;
+    background-image: linear-gradient(-180deg, #00D775, #00BD68);
+    padding: 2px 5px;
+    border-radius: 5px;
+    color: #fff;
 }
 
-.progress {
-    background: #ececec;
-    color: rgb(0, 0, 0);
-    width: 0%;
-    transition: width 2s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.harvest-time, .plant-time {
+    display: none;
 }
-
 
 @media (max-width: 992px) {
 
@@ -354,9 +371,11 @@ button:focus {
     }
 
     .openbtn {
-        flex-wrap: nowrap;
-        justify-content: flex-end;
-        margin-left: auto;
+        display: none;
+    }
+
+    .openbtn-mobile {
+        display: block;
     }
 
     #main {
