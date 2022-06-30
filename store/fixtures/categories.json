@@ -12,5 +12,13 @@
             "name": "tools",
             "friendly_name": "Tools"
         }
+    },
+    {
+        "pk": 3,
+        "model": "store.category",
+        "fields": {
+            "name": "plants",
+            "friendly_name": "Plants"
+        }
     }
 ]

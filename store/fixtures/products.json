@@ -2,25 +2,447 @@
         "pk": 1,
         "model": "store.product",
         "fields": {
-            "sku": "pp5001340155",
+            "category": 1,
+            "sku": "001",
             "name": "Corn Seed",
             "description": "Used for growing corn.",
-            "price": 5,
-            "category": 1,
+            "price": 8,
+            "sell_price": 8,
+            "growtime": 30,
+            "produces": "Corn",
             "image_url": "",
-            "image": "DP0709201205510679M.jpg"
+            "image": "corn_seed.png"
         }
     }, {
         "pk": 2,
         "model": "store.product",
         "fields": {
-            "sku": "pp5001600425",
-            "name": "Carrot Seed",
-            "description": "Used for growing carrots.",
-            "price": 6,
             "category": 1,
-            "image_url": "http://s7d9.scene7.com/is/image/JCPenney/DP0113201617034987M.tif?hei=380&amp;wid=380&op_usm=.4,.8,0,0&resmode=sharp2&op_usm=1.5,.8,0,0&resmode=sharp",
-            "image": "DP0113201617034987M.jpg"
+            "sku": "002",
+            "name": "Aubergine Seed",
+            "description": "Used for growing aubergine plants.",
+            "price": 12,
+            "sell_price": 12,
+            "growtime": 50,
+            "produces": "Aubergine",
+            "image_url": "",
+            "image": "aubergine_seed.png"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "store.product",
+        "fields": {
+            "category": 1,
+            "sku": "003",
+            "name": "Blue Flower Seed",
+            "description": "Grows a beautiful blue-coloured flower.",
+            "price": 9,
+            "sell_price": 9,
+            "growtime": 40,
+            "produces": "Blue Flower",
+            "image_url": "",
+            "image": "blue_flower_seed.png"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "store.product",
+        "fields": {
+            "category": 1,
+            "sku": "004",
+            "name": "Cabbage Seed",
+            "description": "Used for growing cabbages",
+            "price": 17,
+            "sell_price": 17,
+            "growtime": 70,
+            "produces": "Cabbage",
+            "image_url": "",
+            "image": "cabbage_seed.png"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "store.product",
+        "fields": {
+            "category": 1,
+            "sku": "005",
+            "name": "Cauliflower Seed",
+            "description": "Seeds used for growing cauliflowers.",
+            "price": 20,
+            "sell_price": 20,
+            "growtime": 80,
+            "produces": "Cauliflower",
+            "image_url": "",
+            "image": "cauliflower_seed.png"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "store.product",
+        "fields": {
+            "category": 1,
+            "sku": "006",
+            "name": "Cucumber Seed",
+            "description": "Seeds which are used to grlow cucumbers.",
+            "price": 13,
+            "sell_price": 13,
+            "growtime": 50,
+            "produces": "Cucumber",
+            "image_url": "",
+            "image": "cucumber_seed.png"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "store.product",
+        "fields": {
+            "category": 1,
+            "sku": "007",
+            "name": "Parsnip Seed",
+            "description": "Used for growing parsnips.",
+            "price": 16,
+            "sell_price": 16,
+            "growtime": 65,
+            "produces": "Parsnip",
+            "image_url": "",
+            "image": "parsnip_seed.png"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "store.product",
+        "fields": {
+            "category": 1,
+            "sku": "008",
+            "name": "Pumpkin Seed",
+            "description": "Pumpkin seeds. Eat then for a healthy snack, or plant then to grow pumpkins!",
+            "price": 28,
+            "sell_price": 28,
+            "growtime": 90,
+            "produces": "Pumpkin",
+            "image_url": "",
+            "image": "pumpkin_seed.png"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "store.product",
+        "fields": {
+            "category": 1,
+            "sku": "009",
+            "name": "Raddish Seed",
+            "description": "Seeds used for growing radishes.",
+            "price": 13,
+            "sell_price": 13,
+            "growtime": 55,
+            "produces": "Raddish",
+            "image_url": "",
+            "image": "raddish_seed.png"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "store.product",
+        "fields": {
+            "category": 1,
+            "sku": "010",
+            "name": "Red Flower Seed",
+            "description": "Seeds which produce beautiful red flowers.",
+            "price": 10,
+            "sell_price": 10,
+            "growtime": 45,
+            "produces": "Red Flower",
+            "image_url": "",
+            "image": "red_flower_seed.png"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "store.product",
+        "fields": {
+            "category": 1,
+            "sku": "011",
+            "name": "Star Fruid Seed",
+            "description": "A rare seed which produces a mysterious fruit...",
+            "price": 200,
+            "sell_price": 100,
+            "growtime": 100,
+            "produces": "Star Fruit",
+            "image_url": "",
+            "image": "star_fruit_seed.png"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "store.product",
+        "fields": {
+            "category": 1,
+            "sku": "012",
+            "name": "Tomato Seed",
+            "description": "A tomato seed. Used for growing tomatoes.",
+            "price": 10,
+            "sell_price": 10,
+            "growtime": 60,
+            "produces": "Tomato",
+            "image_url": "",
+            "image": "tomato_seed.png"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "store.product",
+        "fields": {
+            "category": 1,
+            "sku": "013",
+            "name": "Wheat Seed",
+            "description": "The common wheat seed, used for growing wheat.",
+            "price": 3,
+            "sell_price": 3,
+            "growtime": 15,
+            "produces": "Wheat",
+            "image_url": "",
+            "image": "wheat_seed.png"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "store.product",
+        "fields": {
+            "category": 3,
+            "sku": "014",
+            "name": "Aubergine",
+            "description": "Aubergiine/Eggplant. Deep purple in colour.",
+            "price": 18,
+            "sell_price": 18,
+            "growtime": 0,
+            "produces": "",
+            "image_url": "",
+            "image": "aubergine.png"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "store.product",
+        "fields": {
+            "category": 3,
+            "sku": "015",
+            "name": "Blue Flower",
+            "description": "A beautiful blue flower. Decorate your garden or gift it to a special person.",
+            "price": 14,
+            "sell_price": 14,
+            "growtime": 0,
+            "produces": "",
+            "image_url": "",
+            "image": "blue_flower.png"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "store.product",
+        "fields": {
+            "category": 3,
+            "sku": "016",
+            "name": "Cabbage",
+            "description": "A large, leafy cabbage. Often used in oriental dishes but tasty in just about any cuisine!",
+            "price": 24,
+            "sell_price": 24,
+            "growtime": 0,
+            "produces": "",
+            "image_url": "",
+            "image": "cabbage.png"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "store.product",
+        "fields": {
+            "category": 3,
+            "sku": "017",
+            "name": "Carrot",
+            "description": "The humble carrot. Eat raw or prepared - delicious every time.",
+            "price": 15,
+            "sell_price": 15,
+            "growtime": 0,
+            "produces": "",
+            "image_url": "",
+            "image": "carrot.png"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "store.product",
+        "fields": {
+            "category": 1,
+            "sku": "018",
+            "name": "Carrot Seed",
+            "description": "Seed used for growing carrots.",
+            "price": 11,
+            "sell_price": 11,
+            "growtime": 40,
+            "produces": "Carrot",
+            "image_url": "",
+            "image": "carrot_seed.png"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "store.product",
+        "fields": {
+            "category": 3,
+            "sku": "019",
+            "name": "Cauliflower",
+            "description": "A large white cauliflower.",
+            "price": 26,
+            "sell_price": 26,
+            "growtime": 0,
+            "produces": "",
+            "image_url": "",
+            "image": "cauliflower.png"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "store.product",
+        "fields": {
+            "category": 3,
+            "sku": "020",
+            "name": "Corn",
+            "description": "Harvested corn, ready to go on the BBQ!",
+            "price": 12,
+            "sell_price": 12,
+            "growtime": 0,
+            "produces": "",
+            "image_url": "",
+            "image": "corn.png"
+        }
+    },
+    {
+        "pk": 21,
+        "model": "store.product",
+        "fields": {
+            "category": 3,
+            "sku": "021",
+            "name": "Cucumber",
+            "description": "Fresh cucumber. Refreshing and perfect for salads.",
+            "price": 18,
+            "sell_price": 18,
+            "growtime": 0,
+            "produces": "",
+            "image_url": "",
+            "image": "cucumber.png"
+        }
+    },
+    {
+        "pk": 22,
+        "model": "store.product",
+        "fields": {
+            "category": 3,
+            "sku": "022",
+            "name": "parsnip",
+            "description": "A parsnip. The perfect side for a roast dinner",
+            "price": 22,
+            "sell_price": 22,
+            "growtime": 0,
+            "produces": "",
+            "image_url": "",
+            "image": "parsnip.png"
+        }
+    },
+    {
+        "pk": 23,
+        "model": "store.product",
+        "fields": {
+            "category": 3,
+            "sku": "023",
+            "name": "Pumpkin",
+            "description": "A large, orange pumpkin. Use for pumpkin pies or scaring trick-or-treaters!",
+            "price": 36,
+            "sell_price": 36,
+            "growtime": 0,
+            "produces": "",
+            "image_url": "",
+            "image": "pumpkin.png"
+        }
+    },
+    {
+        "pk": 24,
+        "model": "store.product",
+        "fields": {
+            "category": 3,
+            "sku": "024",
+            "name": "Raddish",
+            "description": "A fully grown raddish.",
+            "price": 18,
+            "sell_price": 18,
+            "growtime": 0,
+            "produces": "",
+            "image_url": "",
+            "image": "raddish.png"
+        }
+    },
+    {
+        "pk": 25,
+        "model": "store.product",
+        "fields": {
+            "category": 3,
+            "sku": "025",
+            "name": "Red Flower",
+            "description": "A beautiful red flower. Decorate your home with this or give it to a special person...",
+            "price": 14,
+            "sell_price": 14,
+            "growtime": 0,
+            "produces": "",
+            "image_url": "",
+            "image": "red_flower.png"
+        }
+    },
+    {
+        "pk": 26,
+        "model": "store.product",
+        "fields": {
+            "category": 3,
+            "sku": "026",
+            "name": "Star Fruit",
+            "description": "A mysterious fruit of unknown origin. It has a sweet taste.",
+            "price": 200,
+            "sell_price": 200,
+            "growtime": 0,
+            "produces": "",
+            "image_url": "",
+            "image": "star_fruit.png"
+        }
+    },
+    {
+        "pk": 27,
+        "model": "store.product",
+        "fields": {
+            "category": 3,
+            "sku": "027",
+            "name": "tomato",
+            "description": "A fully grown tomato. Used for curries, pizza, pasta, salads and many more!",
+            "price": 14,
+            "sell_price": 14,
+            "growtime": 0,
+            "produces": "",
+            "image_url": "",
+            "image": "tomato.png"
+        }
+    },
+    {
+        "pk": 28,
+        "model": "store.product",
+        "fields": {
+            "category": 3,
+            "sku": "028",
+            "name": "Wheat",
+            "description": "Harvested wheat. Used in an abundance of ingredients and foods.",
+            "price": 6,
+            "sell_price": 6,
+            "growtime": 0,
+            "produces": "",
+            "image_url": "",
+            "image": "wheat.png"
         }
     }
 ]

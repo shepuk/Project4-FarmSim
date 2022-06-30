@@ -36,6 +36,8 @@ def plant_crop(request, item, cropslot):
     redirect_url = request.POST.get('redirect_url')
     crop = Inventory.objects.get(owner=owner, item__name=item) # get item from user inventory
     product = get_object_or_404(Product, name=item) # get product for growtime ref.
+    grow_time = product.growtime * 4
+    print(grow_time)
 
     if crop.quantity >= 1:
         crop.quantity = crop.quantity - 1
@@ -44,7 +46,7 @@ def plant_crop(request, item, cropslot):
         crop.delete()
 
     # quickfix for UK time - need to add timezomeaware date generation (pytz)
-    harvest_time = datetime.now() + timedelta(hours=1, seconds=180)
+    harvest_time = datetime.now() + timedelta(hours=1, seconds=int(grow_time))
     plant_time = datetime.now() + timedelta(hours=1)
 
     if Farm.objects.filter(user=owner).exists():
@@ -65,3 +67,23 @@ def plant_crop(request, item, cropslot):
     }
     
     return redirect(redirect_url)
+
+
+def harvest_crop(request, crop):
+
+    items = Inventory.objects.all()
+    owner = request.user
+    product = get_object_or_404(Product, name=crop)
+    new_product = product.produces
+    if Inventory.objects.filter(owner=owner, item__name=new_product).exists():
+        existing = Inventory.objects.get(item__name=new_product)
+        existing.quantity = existing.quantity + 1
+        existing.save()
+    else:
+        item = Product.objects.get(name=new_product)
+        new_entry = Product.objects.get(name=new_product)
+        newentry = Inventory(owner=owner, item=new_entry, quantity=1)
+        newentry.save()
+
+
+    return redirect(farm)

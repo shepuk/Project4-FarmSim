@@ -38,6 +38,7 @@ $(document).ready(function () {
     let pDate = new Date(pYear, months[pMonth] - 1, pDay, pHour, pMinute, pSec);
 
     let bar = $(this).find('.progressContainer');
+    let harv = $(this).find('.progressHarvestContainer');
 
     var start = pDate;
     var end = hDate;
@@ -57,7 +58,13 @@ $(document).ready(function () {
 
       var p = Math.round(timeBetweenStartAndToday / timeBetweenStartAndEnd * 100);
 
-      bar.html(p + '%');
+      if (p < 100) {
+        harv.hide();
+        bar.html(p + '%');
+      } else {
+        bar.hide();
+        harv.show();
+      }
 
     }
 
