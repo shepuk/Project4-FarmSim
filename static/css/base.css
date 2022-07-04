@@ -70,7 +70,7 @@ a:hover {
     background-color: #343444;
 }
 
-.sidebar a {
+.sidebar a, .button {
     min-width: 183px;
     max-width: 183px;
     margin: auto;
@@ -391,4 +391,20 @@ button:focus {
     #main {
         margin-left: 0px;
     }
+}
+
+.login-register-input input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+footer {
+    background-color: #d9d9d9!important;
+    margin-top: 100px;
+    padding-bottom: 50px;
 }

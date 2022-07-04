@@ -2,6 +2,9 @@ $(document).ready(function () {
 
   $(".plant").each(function () {
 
+    var plantSpot = $(this).find('.progressContainer')
+    if (plantSpot.is(':visible')) {
+
     const months = {
       Jan: '01',
       Feb: '02',
@@ -68,6 +71,9 @@ $(document).ready(function () {
       }
 
     }
+  } else {
+    
+  }
 
   });
 

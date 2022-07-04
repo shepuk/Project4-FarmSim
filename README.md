@@ -9,4 +9,7 @@ Fix - was using onetoonefield, instead of foreighkey
 Could not update/save model fields by using a variable as a field name in farm.views
 fix - string format method was used to insert the variable into the model query
 
+farm urls passing through two strings, were firing the first function in views every time because the first url can always avcept two strings.
+Quick fix - added a third (unised) parameter to url to differantiate urls
+
 gold icon from <a href="https://www.flaticon.com/free-icons/coin" title="coin icons">Coin icons created by Freepik - Flaticon
