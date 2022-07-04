@@ -60,6 +60,7 @@ $(document).ready(function () {
 
       if (p < 100) {
         harv.hide();
+        bar.show();
         bar.html(p + '%');
       } else {
         bar.hide();

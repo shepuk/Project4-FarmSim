@@ -367,6 +367,7 @@ button:focus {
     padding: 2px 5px;
     border-radius: 5px;
     color: #fff;   
+    display: none;
 }
 
 .harvest-time, .plant-time {

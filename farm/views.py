@@ -27,8 +27,8 @@ def farm (request):
     return render(request, 'farm/farm.html', context)
 
 
-def plant_crop(request, item, cropslot):
-
+def plant_crop(request, item, cropslot, number):
+    print("plant_crop")
     items = Inventory.objects.all()
 
     # item = get_object_or_404(Product, name=item_item)
@@ -69,21 +69,25 @@ def plant_crop(request, item, cropslot):
     return redirect(redirect_url)
 
 
-def harvest_crop(request, crop):
-
-    items = Inventory.objects.all()
+def harvest_crop(request, crop, position):
+    print(position)
     owner = request.user
+    myFarm = Farm.objects.get(user=owner)
+    items = Inventory.objects.all()
     product = get_object_or_404(Product, name=crop)
     new_product = product.produces
     if Inventory.objects.filter(owner=owner, item__name=new_product).exists():
         existing = Inventory.objects.get(item__name=new_product)
         existing.quantity = existing.quantity + 1
         existing.save()
+        setattr(myFarm, "{}".format(position), None)
+        myFarm.save()
     else:
         item = Product.objects.get(name=new_product)
         new_entry = Product.objects.get(name=new_product)
         newentry = Inventory(owner=owner, item=new_entry, quantity=1)
         newentry.save()
-
+        setattr(myFarm, "{}".format(position), None)
+        myFarm.save()
 
     return redirect(farm)

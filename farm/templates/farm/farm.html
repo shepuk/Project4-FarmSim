@@ -39,7 +39,7 @@
                 <div class="progressContainer">
                 </div>
 
-                <a class="progressHarvestContainer" href="{% url 'harvest_crop' crop=farm.crop1 %}">
+                <a class="progressHarvestContainer" href="{% url 'harvest_crop' crop=farm.crop1 position='crop1' %}">
                     Harvest
                     </a>
                 
@@ -54,7 +54,7 @@
                         {% if item.owner == user  and item.item.category.name == 'seeds' %}
                         <li>
                             <form class="form store-price"
-                                action="{% url 'plant_crop' item=item.item cropslot='crop1' %}" method="POST">
+                                action="{% url 'plant_crop' item=item.item cropslot='crop1' number='1' %}" method="POST">
                                 {% csrf_token %}
                                 <button class="crop-button" type="submit">
                                     {{ item.item }}
@@ -84,7 +84,7 @@
                 <div class="progressContainer">
                 </div>
 
-                <a class="progressHarvestContainer" href="{% url 'harvest_crop' crop=farm.crop2 %}">
+                <a class="progressHarvestContainer" href="{% url 'harvest_crop' crop=farm.crop2 position='crop2' %}">
                     Harvest
                     </a>
 
@@ -99,7 +99,7 @@
                         {% if item.owner == user and item.item.category.name == 'seeds' %}
                         <li>
                             <form class="form store-price"
-                                action="{% url 'plant_crop' item=item.item cropslot='crop2' %}" method="POST">
+                                action="{% url 'plant_crop' item=item.item cropslot='crop2' number='1' %}" method="POST">
                                 {% csrf_token %}
                                 <button class="crop-button" type="submit">
                                     {{ item.item }}
@@ -129,7 +129,7 @@
                 <div class="progressContainer">
                 </div>
 
-                <a class="progressHarvestContainer" href="{% url 'harvest_crop' crop=farm.crop3 %}">
+                <a class="progressHarvestContainer" href="{% url 'harvest_crop' crop=farm.crop3 position='crop3' %}">
                     Harvest
                     </a>
 
@@ -144,7 +144,7 @@
                         {% if item.owner == user and item.item.category.name == 'seeds' %}
                         <li>
                             <form class="form store-price"
-                                action="{% url 'plant_crop' item=item.item cropslot='crop3' %}" method="POST">
+                                action="{% url 'plant_crop' item=item.item cropslot='crop3' number='1' %}" method="POST">
                                 {% csrf_token %}
                                 <button class="crop-button" type="submit">
                                     {{ item.item }}
@@ -174,7 +174,7 @@
                 <div class="progressContainer">
                 </div>
 
-                <a class="progressHarvestContainer" href="{% url 'harvest_crop' crop=farm.crop4 %}">
+                <a class="progressHarvestContainer" href="{% url 'harvest_crop' crop=farm.crop4 position='crop4' %}">
                     Harvest
                     </a>
 
@@ -189,7 +189,7 @@
                         {% if item.owner == user and item.item.category.name == 'seeds' %}
                         <li>
                             <form class="form store-price"
-                                action="{% url 'plant_crop' item=item.item cropslot='crop4' %}" method="POST">
+                                action="{% url 'plant_crop' item=item.item cropslot='crop4' number='1' %}" method="POST">
                                 {% csrf_token %}
                                 <button class="crop-button" type="submit">
                                     {{ item.item }}
@@ -219,7 +219,7 @@
                 <div class="progressContainer">
                 </div>
 
-                <a class="progressHarvestContainer" href="{% url 'harvest_crop' crop=farm.crop5 %}">
+                <a class="progressHarvestContainer" href="{% url 'harvest_crop' crop=farm.crop5 position='crop5' %}">
                     Harvest
                     </a>
 
@@ -234,7 +234,7 @@
                         {% if item.owner == user and item.item.category.name == 'seeds' %}
                         <li>
                             <form class="form store-price"
-                                action="{% url 'plant_crop' item=item.item cropslot='crop5' %}" method="POST">
+                                action="{% url 'plant_crop' item=item.item cropslot='crop5' number='1' %}" method="POST">
                                 {% csrf_token %}
                                 <button class="crop-button" type="submit">
                                     {{ item.item }}
@@ -264,7 +264,7 @@
                 <div class="progressContainer">
                 </div>
 
-                <a class="progressHarvestContainer" href="{% url 'harvest_crop' crop=farm.crop6 %}">
+                <a class="progressHarvestContainer" href="{% url 'harvest_crop' crop=farm.crop6 position='crop6' %}">
                     Harvest
                     </a>
 
@@ -279,7 +279,7 @@
                         {% if item.owner == user and item.item.category.name == 'seeds' %}
                         <li>
                             <form class="form store-price"
-                                action="{% url 'plant_crop' item=item.item cropslot='crop6' %}" method="POST">
+                                action="{% url 'plant_crop' item=item.item cropslot='crop6' number='1' %}" method="POST">
                                 {% csrf_token %}
                                 <button class="crop-button" type="submit">
                                     {{ item.item }}
@@ -309,7 +309,7 @@
                 <div class="progressContainer">
                 </div>
 
-                <a class="progressHarvestContainer" href="{% url 'harvest_crop' crop=farm.crop7 %}">
+                <a class="progressHarvestContainer" href="{% url 'harvest_crop' crop=farm.crop7 position='crop7' %}">
                     Harvest
                     </a>
 
@@ -324,7 +324,7 @@
                         {% if item.owner == user and item.item.category.name == 'seeds' %}
                         <li>
                             <form class="form store-price"
-                                action="{% url 'plant_crop' item=item.item cropslot='crop7' %}" method="POST">
+                                action="{% url 'plant_crop' item=item.item cropslot='crop7' number='1' %}" method="POST">
                                 {% csrf_token %}
                                 <button class="crop-button" type="submit">
                                     {{ item.item }}
@@ -354,7 +354,7 @@
                 <div class="progressContainer">
                 </div>
 
-                <a class="progressHarvestContainer" href="{% url 'harvest_crop' crop=farm.crop8 %}">
+                <a class="progressHarvestContainer" href="{% url 'harvest_crop' crop=farm.crop8 position='crop8' %}">
                     Harvest
                     </a>
 
@@ -369,7 +369,7 @@
                         {% if item.owner == user and item.item.category.name == 'seeds' %}
                         <li>
                             <form class="form store-price"
-                                action="{% url 'plant_crop' item=item.item cropslot='crop8' %}" method="POST">
+                                action="{% url 'plant_crop' item=item.item cropslot='crop8' number='1' %}" method="POST">
                                 {% csrf_token %}
                                 <button class="crop-button" type="submit">
                                     {{ item.item }}
