@@ -4,6 +4,7 @@ from profiles.models import Profile
 from inventory.models import Inventory
 from store.models import Product
 from .models import Farm
+from django.contrib import messages
 from datetime import datetime, timedelta
 
 
@@ -30,7 +31,6 @@ def farm (request):
 def plant_crop(request, item, cropslot, number):
     print("plant_crop")
     items = Inventory.objects.all()
-
     # item = get_object_or_404(Product, name=item_item)
     owner = request.user # get user
     redirect_url = request.POST.get('redirect_url')
@@ -54,11 +54,12 @@ def plant_crop(request, item, cropslot, number):
         setattr(farm, cropslot, product)
         setattr(farm, "{}_harvest_time".format(cropslot), harvest_time)
         setattr(farm, "{}_plant_time".format(cropslot), plant_time)
-
         farm.save()
+        messages.success(request, f"{product} planted!")
     else:
         cropplant = Farm(user=owner, cropslot=product, cropslot_harvest_time=harvest_time, cropslot_plant_time=plant_time)
         cropplant.save()
+        messages.success(request, f"{product} planted!")
 
     items = Inventory.objects.all()
 
@@ -82,6 +83,7 @@ def harvest_crop(request, crop, position):
         existing.save()
         setattr(myFarm, "{}".format(position), None)
         myFarm.save()
+        messages.success(request, f"{new_product} added to inventory!")
     else:
         item = Product.objects.get(name=new_product)
         new_entry = Product.objects.get(name=new_product)
@@ -89,5 +91,6 @@ def harvest_crop(request, crop, position):
         newentry.save()
         setattr(myFarm, "{}".format(position), None)
         myFarm.save()
+        messages.success(request, f"{new_entry} added to inventory!")
 
     return redirect(farm)

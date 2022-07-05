@@ -3,15 +3,16 @@
 
 h1 {
     font-family: 'Martel', serif;
-    font-weight: 800!important;
+    font-weight: 800 !important;
     margin-top: 8px;
-    font-size: 26px!important;
+    font-size: 26px !important;
 }
 
 h2 {
-    font-family: 'Poppins', serif;
+    font-family: 'Martel', serif;
+    font-weight: 800 !important;
     font-weight: 300;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 h3 {
@@ -24,9 +25,9 @@ h3 {
 h6 {
     font-family: 'Martel', serif;
     color: #4d9959;
-    font-weight: 800!important;
+    font-weight: 800 !important;
     font-size: 1.3rem;
-    font-weight: 400;   
+    font-weight: 400;
     margin-top: 10px;
 }
 
@@ -70,7 +71,8 @@ a:hover {
     background-color: #343444;
 }
 
-.sidebar a, .button {
+.sidebar a,
+.button {
     min-width: 183px;
     max-width: 183px;
     margin: auto;
@@ -109,7 +111,7 @@ a:hover {
 }
 
 .user-card {
-    height: 88px!important;
+    height: 88px !important;
 }
 
 .user-card p {
@@ -193,8 +195,8 @@ button:focus {
 
 .btn-secondary {
     background-color: #4d9959;
-    background-image: linear-gradient(-180deg, #00D775, #00BD68)!important;
-    border: none!important;
+    background-image: linear-gradient(-180deg, #00D775, #00BD68) !important;
+    border: none !important;
     margin: 15px;
     margin-bottom: 20px;
 }
@@ -242,6 +244,10 @@ button:focus {
 
 .box img {
     float: right;
+}
+
+.qty-input {
+    width: 60px !important;
 }
 
 /* ---------------------------------------------------- FARM & FARM GRID */
@@ -335,7 +341,14 @@ button:focus {
     flex-direction: column;
 }
 
-.plant1 img, .plant2 img, .plant3 img, .plant4 img, .plant5 img, .plant6 img, .plant7 img, .plant8 img {
+.plant1 img,
+.plant2 img,
+.plant3 img,
+.plant4 img,
+.plant5 img,
+.plant6 img,
+.plant7 img,
+.plant8 img {
     width: 40%;
     height: auto;
     image-rendering: pixelated;
@@ -343,12 +356,12 @@ button:focus {
 
 .crop-button {
     background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
 }
 
 .progressContainer {
@@ -366,11 +379,12 @@ button:focus {
     background-image: linear-gradient(-180deg, #00D775, #00BD68);
     padding: 2px 5px;
     border-radius: 5px;
-    color: #fff;   
+    color: #fff;
     display: none;
 }
 
-.harvest-time, .plant-time {
+.harvest-time,
+.plant-time {
     display: none;
 }
 
@@ -404,7 +418,83 @@ button:focus {
 }
 
 footer {
-    background-color: #d9d9d9!important;
+    background-color: #d9d9d9 !important;
     margin-top: 100px;
     padding-bottom: 50px;
+}
+
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast:not(.showing):not(.show) {
+    opacity: 100 !important;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+}
+
+ul li a {
+    text-decoration: none;
+    background: rgb(255, 255, 225);
+    display: block;
+    height: 10em;
+    width: 18em;
+    padding: 1em;
+    -webkit-box-shadow: 7px 9px 17px -10px rgba(0,0,0,0.68);
+-moz-box-shadow: 7px 9px 17px -10px rgba(0,0,0,0.68);
+box-shadow: 7px 9px 17px -10px rgba(0,0,0,0.68);
+    transform: rotate(-2deg);
+    transition: transform .15s linear;
+}
+
+ul li:nth-child(even) a {
+    transform: rotate(2deg);
+    position: relative;
+    top: 5px;
+    background: rgb(223, 255, 223);
+}
+
+ul li:nth-child(3n) a {
+    transform: rotate(-3deg);
+    position: relative;
+    top: -5px;
+    background: rgb(230, 230, 255);
+}
+
+ul li:nth-child(5n) a {
+    transform: rotate(3deg);
+    position: relative;
+    top: -10px;
+}
+
+ul li a:hover,
+ul li a:focus {
+    -webkit-box-shadow: 7px 9px 17px 5px rgba(0,0,0,0.46);
+    -moz-box-shadow: 7px 9px 17px 5px rgba(0,0,0,0.46);
+    box-shadow: 7px 9px 17px 5px rgba(0,0,0,0.46);
+    
+    transform: scale(1.25);
+    position: relative;
+    z-index: 5;
+}
+
+ul li {
+    margin: 1em;
 }

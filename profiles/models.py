@@ -8,7 +8,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE, related_name='profile')
     bio = models.TextField(max_length=500, default="My Bio")
     is_premium = models.TextField(default="no")
-    coins = models.DecimalField(max_digits=5, decimal_places=2)
+    coins = models.DecimalField(max_digits=10, decimal_places=2)
 
     def __str__(self):
         return self.user.username

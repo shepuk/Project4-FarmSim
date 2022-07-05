@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Product
 from inventory.models import Inventory
 from profiles.models import Profile
+from django.contrib import messages
 from django.contrib.auth.models import User
 
 def store(request):
@@ -43,14 +44,16 @@ def add_to_user_inventory(request, product_id):
             currentuser.coins = currentuser.coins - item.price * quantity
             currentuser.save()
             existingentry.save()
+            messages.success(request, f"{quantity} {item} added to inventory")
         else:
-            print('not enough coins') #change this to toast message
+            messages.success(request, f"Not enough coins, {item.price * quantity} required.")
     else:
         if item.price * quantity <= currentuser.coins:
             currentuser.coins = currentuser.coins - item.price * quantity
             currentuser.save()
             newentry = Inventory(owner=owner, item=item, quantity=quantity)
             newentry.save()
+            messages.success(request, f"{quantity} {item} added to inventory")
         else:
-            print('not enough coins') #change this to toast message
+            messages.success(request, f"Not enough coins, {item.price * quantity} required.")
     return redirect(redirect_url)
