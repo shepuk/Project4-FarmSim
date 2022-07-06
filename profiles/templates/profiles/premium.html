@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<main class="container">
+    <div class="d-flex align-items-center p-3 my-3 text-white bg-green rounded shadow-sm">
+        <div class="lh-1">
+            <h1 class="h6 mb-0 text-white lh-1">{{ user.username }}'s Profile.</h1>
+            <small>Check and update your details.</small>
+        </div>
+    </div>
+
+    <div class="my-3 p-3 bg-body rounded shadow-sm">
+        <h6 class="border-bottom pb-2 mb-0">Profile Details</h6>
+
+        <div class="d-flex pt-3 border-bottom store-item">
+            <p class="pb-3 mb-0 small lh-sm ">
+                <strong class="d-block text-gray-dark">Buy Premium</strong>
+                Receive special rewards for buying a premium membership!
+            </p>
+        </div>
+
+        <div class="container px-4 py-5" id="custom-cards">
+            <h2 class="pb-2 border-bottom">Premium Features</h2>
+
+            <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+                <div class="col">
+                    <div class="card card-cover h-100 overflow-hidden text-white bg-success rounded-5 shadow-lg">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">More Crops</h2>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <small>Gain double farm slots and grow twice as many crops at once!</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card card-cover h-100 overflow-hidden text-white bg-primary rounded-5 shadow-lg">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Faster Growtime</h2>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <small>10% faster grow time on all farm spots.</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card card-cover h-100 overflow-hidden text-white bg-warning rounded-5 shadow-lg">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Coins!</h2>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <small>15% coin boost on all sellable items.</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex pt-3 border-bottom justify-content-center content-center">
+
+            <div class="card mb-4 rounded-3 shadow-sm">
+                <div class="card-header py-3">
+                    <h1 class="card-title pricing-card-title">£1<small class="text-muted fw-light"> lifetime membership</small></h1>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Extra farm spots</li>
+                        <li>10% growtime speed</li>
+                        <li>15% more coins</li>
+                        <li>Cool banner</li>
+                    </ul>
+                    <form action="{% url 'buy_premium' price=1 price2=2 %}" method="POST">
+                        {% csrf_token %}
+                        <button class="button" type="submit">Buy Now</button>
+                      </form>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</main>
+
+{% endblock %}

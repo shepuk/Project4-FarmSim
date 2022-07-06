@@ -45,7 +45,7 @@
                 Thanks for being a premium member :)
                 {% else %}
                 </br>
-                Buy premium here
+                <a href="{% url 'premium' user=user.username %}">Buy premium here.</a>
                 {% endif %}
             </p>
         </div>

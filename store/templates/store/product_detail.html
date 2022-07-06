@@ -24,8 +24,9 @@
 
         <div class="d-flex pt-3 border-bottom store-item">
             <p class="pb-3 mb-0 small lh-sm ">
-                <strong class="d-block text-gray-dark">Price</strong>
-                {{ product.price }}
+                <strong class="d-block text-gray-dark">Buy Price</strong>
+                <img class="coin nav-coin" src="/media/ui/coin.png"
+        alt="coin, currency of sunrise farm"> {{ product.price }}
             </p>
         </div>
 
@@ -33,17 +34,31 @@
         <div class="d-flex pt-3 border-bottom store-item">
             <p class="pb-3 mb-0 small lh-sm ">
                 <strong class="d-block text-gray-dark">Sell Price</strong>
-                {{ product.sell_price }}
+                <img class="coin nav-coin" src="/media/ui/coin.png"
+        alt="coin, currency of sunrise farm"> {{ product.sell_price }}
             </p>
         </div>
         {% endif %}
 
+        {% if product.growtime > 0 %}
         <div class="d-flex pt-3 border-bottom store-item">
             <p class="pb-3 mb-0 small lh-sm ">
                 <strong class="d-block text-gray-dark">Grow Time</strong>
                 {{ product.growtime }}
             </p>
         </div>
+        {% endif %}
+
+        {% if product.produces == '' %}
+
+        {% else %}
+        <div class="d-flex pt-3 border-bottom store-item">
+            <p class="pb-3 mb-0 small lh-sm ">
+                <strong class="d-block text-gray-dark">Produces</strong>
+                {{ product.produces }}
+            </p>
+        </div>
+        {% endif %}
 
         <small class="d-block text-end mt-3">
             <a href="{% url 'store' %}">Back to store</a>

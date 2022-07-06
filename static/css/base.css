@@ -498,3 +498,7 @@ ul li a:focus {
 ul li {
     margin: 1em;
 }
+
+.card {
+    border-radius: 25px;
+}
