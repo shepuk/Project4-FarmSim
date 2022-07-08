@@ -18,3 +18,5 @@ fixed by adding css to make fully opaque, then using jquery's fadeout() function
 gold icon from <a href="https://www.flaticon.com/free-icons/coin" title="coin icons">Coin icons created by Freepik - Flaticon
 
 stick note design from https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-with-css3-and-html5--net-13934
+
+hero image https://www.pexels.com/photo/aerial-shot-of-green-milling-tractor-1595108/

@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 import stripe
 from django.conf import settings
+import datetime
+
 
 def profile(request):
     print('profile')
@@ -20,10 +22,11 @@ def premium(request, user):
 
 def buy_premium(request, price, price2):
 
-    api = settings.STRIPE_KEY
-    print(api)
+    STRIPE_KEY = settings.STRIPE_KEY
 
-    stripe.api_key = api
+    print(STRIPE_KEY)
+
+    stripe.api_key = STRIPE_KEY
 
     session = stripe.checkout.Session.create(
         success_url="https://8000-shepuk-project4farmsim-xhmhcyec1z2.ws-eu51.gitpod.io/profile/1",
