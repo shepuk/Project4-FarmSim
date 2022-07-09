@@ -5,8 +5,9 @@ from profiles.models import Profile
 from django.contrib import messages
 from django.contrib.auth.models import User
 
-def store(request):
 
+def store(request):
+    """ lists all products """
     products = Product.objects.all()
 
     context = {
@@ -17,8 +18,7 @@ def store(request):
 
 
 def product_detail(request, product_name):
-
-
+    """ directs to a page which displays detailed item info """
     product = get_object_or_404(Product, name=product_name)
 
     context = {

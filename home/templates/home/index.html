@@ -3,54 +3,15 @@
 
 {% block content %}
 
-
-
 <main class="container">
   <div class="d-flex align-items-center p-3 my-3 text-white bg-green rounded shadow-sm">
     <div class="lh-1">
       <h1 class="mb-0 text-white lh-1">Sunrise Farm</h1>
-      <small>Access your farm, go shopping, or check your inventory from here!</small>
+      {% if user.is_authenticated %}<small>Access your farm, go shopping, or check your inventory from here!</small>{% endif %}
     </div>
-  </div>
+  </div>  
 
-  
-
-
-
-  <div class="d-flex container-fluid" lc-helper="background" style="height:50vh;background:url(../../../media/ui/hero.jpg)  center / cover no-repeat;">
-  </div>
-  <div class="container p-5 bg-light" style="margin-top:-100px">
-    <div class="row">
-      <div class="col-md-4 text-center align-self-center">
-        <div class="lc-block border-end border-2 ">
-          <div editable="rich">
-            <p class="display-4 text-secondary"><i class="fa-solid fa-wheat-awn"></i></p>
-          </div>
-        </div><!-- /lc-block -->
-      </div><!-- /col -->
-      <div class="col-md-8">
-        <div class="lc-block ">
-          <div editable="rich">
-            <p class="display-4">Plant, grow & harvest... welcome to Sunrise Farm.</p>
-          </div>
-        </div><!-- /lc-block -->
-      </div><!-- /col -->
-    </div>
-    <div class="row">
-      <div class="col-md-9 offset-md-1">
-        <div class="lc-block mt-5">
-          <div editable="rich">
-            <p class="lead text-secondary">Welcome to Sunrise Farm. Here, you can buy, sell, grow and harvest crops... and more! </p>
-            <p class="lead text-secondary">Learn how to play with the help/about sections in the sidebar. Most importantly, have fun!</p>
-            <button class="button">Log in</button>
-            <button class="button">Sign up</button>
-          </div>
-        </div><!-- /lc-block -->
-      </div><!-- /col -->
-    </div>
-  </div>
-  
-
+  {% if user.is_authenticated %}
   <div class="my-3 p-3 bg-body rounded shadow-sm">
     <img src="/media/ui/player_house.gif" alt="A farm house">
     <h6 class="border-bottom pb-2 mb-0">Your Farm</h6>
@@ -86,7 +47,7 @@
 
   <div class="my-3 p-3 bg-body rounded shadow-sm">
     <img src="/media/ui/market_sign.gif" alt="A store building">
-    <h6 class="border-bottom pb-2 mb-0">Head Out</h6>
+    <h6 class="border-bottom pb-2 mb-0" id="headout">Head Out</h6>
 
     <a href="{% url 'store' %}">
       <div class="d-flex pt-3 border-bottom store-item">
@@ -110,12 +71,12 @@
       </div>
     </a>
 
-    <a href="{% url 'tasks' %}">
+    <a href="#">
       <div class="d-flex pt-3 border-bottom store-item">
-        <img class="store-image" src="/media/ui/carrot.png" alt="A carrot icon">
+        <img class="store-image" src="/media/ui/sign.png" alt="A farm house">
         <p class="pb-3 mb-0 small lh-sm ">
           <strong class="d-block text-gray-dark">Village Notice Board</strong>
-          Complete errands for townfolk.
+          COMING SOON. Complete errands for townfolk.
         </p>
         <p class="store-price"></p>
       </div>
@@ -126,7 +87,7 @@
         <img class="store-image" src="/media/ui/carrot.png" alt="A carrot icon">
         <p class="pb-3 mb-0 small lh-sm ">
           <strong class="d-block text-gray-dark">Museum</strong>
-          See your accolades and achievements.
+          COMING SOON. See your accolades and achievements.
         </p>
         <p class="store-price"></p>
       </div>
@@ -137,11 +98,35 @@
         <img class="store-image" src="/media/ui/carrot.png" alt="A carrot icon">
         <p class="pb-3 mb-0 small lh-sm ">
           <strong class="d-block text-gray-dark">Explore</strong>
-          Go foraging and gather materials.
+          COMING SOON. Go foraging and gather materials.
         </p>
         <p class="store-price"></p>
       </div>
     </a>
+
+  {% else %}
+    <div class="d-flex container-fluid rounded" lc-helper="background" style="height:50vh;background:url(../../../media/ui/hero.jpg)  center / cover no-repeat;">
+    </div>
+    <div class="container p-5 bg-light rounded-bottom" style="margin-top:-100px">
+      <div class="row">
+        <div class="col">
+          <div class="lc-block ">
+              <h1 class="text-center">Welcome to Sunrise Farm.</h1>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="lc-block mt-5">
+              <p class="lead text-secondary text-center">Welcome to Sunrise Farm. As a new farm owner, you'll need to learn how to run things around here! Buy, sell, grow and harvest crops, and more.</p>
+              <p class="lead text-secondary text-center">Learn how to play with the help/about sections in the sidebar.</p>
+              <a href="{% url 'account_login' %}"><button class="button">Log in</button></a>
+              <a href="{% url 'account_signup' %}"><button class="button">Register</button></a>
+          </div>
+        </div>
+      </div>
+    
+  {% endif %}
 
   </div>
 </main>

@@ -31,13 +31,6 @@
 
         <div class="d-flex pt-3 border-bottom store-item">
             <p class="pb-3 mb-0 small lh-sm ">
-                <strong class="d-block text-gray-dark">Bio</strong>
-                {{ user.profile.bio}}
-            </p>
-        </div>
-
-        <div class="d-flex pt-3 border-bottom store-item">
-            <p class="pb-3 mb-0 small lh-sm ">
                 <strong class="d-block text-gray-dark">Premium member?</strong>
                 {{ user.profile.is_premium}}
                 {% if user.profile.is_premium == yes %}

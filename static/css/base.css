@@ -165,6 +165,8 @@ button:focus {
     margin-left: 10px;
 }
 
+/* ---------------------------------------------------------------- BUTTONS AND REUSABLES */
+
 #main {
     transition: margin-left .7s;
     padding-top: 0px;
@@ -200,6 +202,8 @@ button:focus {
     margin: 15px;
     margin-bottom: 20px;
 }
+
+/* ---------------------------------------------------------------- STORE */
 
 .store-headers {
     display: flex;
@@ -388,6 +392,73 @@ button:focus {
     display: none;
 }
 
+/* ---------------------------------------------------------------- LOGIN / SIGNUP FORMS */
+
+.login-register-input input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.signin-signout-option {
+    flex-direction: column!important;
+    align-items: flex-start!important;
+    margin: 20px!important;
+}
+
+/* ---------------------------------------------------------------- FOOTER */
+
+footer {
+    background-color: #d9d9d9 !important;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+/* ---------------------------------------------------------------- TOAST */
+
+.message-container {
+    position: fixed;
+    top: 40px;
+    right: 15px;
+    z-index: 999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+/* THIS OVERRIDES DEFAULT BEHAVOUR TO MAKE TOASTS WORK AS INTENDED */
+.toast:not(.showing):not(.show) {
+    opacity: 100 !important;
+}
+
+/* ---------------------------------------------------------------- INVENTORY PAGE */
+
+.item-slot {
+    background: #d9d9d9;
+    border-radius: 15px;
+    height: 100px;
+    margin: 10px;
+    -webkit-box-shadow: inset 2px -2px 36px -13px rgba(0,0,0,0.25); 
+    box-shadow: inset 2px -2px 36px -13px rgba(0,0,0,0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.special-item {
+    height: 45px;
+    width: 45px;
+    image-rendering: pixelated;
+    opacity: 0.3;
+}
+
+/* ---------------------------------------------------------------- MEDIA QUERIES */
+
 @media (max-width: 992px) {
 
     .sidebar {
@@ -405,100 +476,4 @@ button:focus {
     #main {
         margin-left: 0px;
     }
-}
-
-.login-register-input input {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-footer {
-    background-color: #d9d9d9 !important;
-    margin-top: 100px;
-    padding-bottom: 50px;
-}
-
-.message-container {
-    position: fixed;
-    top: 72px;
-    right: 15px;
-    z-index: 999999;
-}
-
-.custom-toast {
-    overflow: visible;
-}
-
-.toast:not(.showing):not(.show) {
-    opacity: 100 !important;
-}
-
-ul,
-li {
-    list-style: none;
-}
-
-ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 0;
-}
-
-ul li a {
-    text-decoration: none;
-    background: rgb(255, 255, 225);
-    display: block;
-    height: 10em;
-    width: 18em;
-    padding: 1em;
-    -webkit-box-shadow: 7px 9px 17px -10px rgba(0,0,0,0.68);
--moz-box-shadow: 7px 9px 17px -10px rgba(0,0,0,0.68);
-box-shadow: 7px 9px 17px -10px rgba(0,0,0,0.68);
-    transform: rotate(-2deg);
-    transition: transform .15s linear;
-}
-
-ul li:nth-child(even) a {
-    transform: rotate(2deg);
-    position: relative;
-    top: 5px;
-    background: rgb(223, 255, 223);
-}
-
-ul li:nth-child(3n) a {
-    transform: rotate(-3deg);
-    position: relative;
-    top: -5px;
-    background: rgb(230, 230, 255);
-}
-
-ul li:nth-child(5n) a {
-    transform: rotate(3deg);
-    position: relative;
-    top: -10px;
-}
-
-ul li a:hover,
-ul li a:focus {
-    -webkit-box-shadow: 7px 9px 17px 5px rgba(0,0,0,0.46);
-    -moz-box-shadow: 7px 9px 17px 5px rgba(0,0,0,0.46);
-    box-shadow: 7px 9px 17px 5px rgba(0,0,0,0.46);
-    
-    transform: scale(1.25);
-    position: relative;
-    z-index: 5;
-}
-
-ul li {
-    margin: 1em;
-}
-
-.card {
-    border-radius: 25px;
 }

@@ -13,15 +13,6 @@
 
     <div class="my-3 p-3 bg-body rounded shadow-sm">
         <h6 class="border-bottom pb-2 mb-0">Your crops</h6>
-        <div class="d-flex pt-3 border-bottom">
-            <p class="pb-3 mb-0 small lh-sm ">
-                <strong class="d-block text-gray-dark">Available spots:</strong>
-                999
-                <strong class="d-block text-gray-dark">Active crops:</strong>
-                999
-                <strong class="d-block text-gray-dark">Ready for harvest:</strong>
-            </p>
-        </div>
 
         <div class="container field-container">
             <div class="field-background">
@@ -52,7 +43,7 @@
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                         {% for item in items %}
                         {% if item.owner == user  and item.item.category.name == 'seeds' %}
-                        <li>
+                        <li class="dropdown-item">
                             <form class="form store-price"
                                 action="{% url 'plant_crop' item=item.item cropslot='crop1' number='1' %}" method="POST">
                                 {% csrf_token %}
@@ -65,7 +56,7 @@
                         </li>
                         {% endif %}
                         {% endfor %}
-                        <li><a href="{% url 'store' %}">Store</a></li>
+                        <li class="dropdown-item"><a href="{% url 'store' %}">Store</a></li>
                     </ul>
                 </div>
                 {% endif %}
@@ -90,14 +81,14 @@
 
                 {% else %}
                 <div class="dropdown">
-                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1"
+                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton2"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Plant
                     </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
                         {% for item in items %}
                         {% if item.owner == user and item.item.category.name == 'seeds' %}
-                        <li>
+                        <li class="dropdown-item">
                             <form class="form store-price"
                                 action="{% url 'plant_crop' item=item.item cropslot='crop2' number='1' %}" method="POST">
                                 {% csrf_token %}
@@ -110,7 +101,7 @@
                         </li>
                         {% endif %}
                         {% endfor %}
-                        <li><a href="{% url 'store' %}">Store</a></li>
+                        <li class="dropdown-item"><a href="{% url 'store' %}">Store</a></li>
                     </ul>
                 </div>
                 {% endif %}
@@ -135,14 +126,14 @@
 
                 {% else %}
                 <div class="dropdown">
-                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1"
+                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton3"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Plant
                     </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
                         {% for item in items %}
                         {% if item.owner == user and item.item.category.name == 'seeds' %}
-                        <li>
+                        <li class="dropdown-item">
                             <form class="form store-price"
                                 action="{% url 'plant_crop' item=item.item cropslot='crop3' number='1' %}" method="POST">
                                 {% csrf_token %}
@@ -155,7 +146,7 @@
                         </li>
                         {% endif %}
                         {% endfor %}
-                        <li><a href="{% url 'store' %}">Store</a></li>
+                        <li class="dropdown-item"><a href="{% url 'store' %}">Store</a></li>
                     </ul>
                 </div>
                 {% endif %}
@@ -180,14 +171,14 @@
 
                 {% else %}
                 <div class="dropdown">
-                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1"
+                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton4"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Plant
                     </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
                         {% for item in items %}
                         {% if item.owner == user and item.item.category.name == 'seeds' %}
-                        <li>
+                        <li class="dropdown-item">
                             <form class="form store-price"
                                 action="{% url 'plant_crop' item=item.item cropslot='crop4' number='1' %}" method="POST">
                                 {% csrf_token %}
@@ -200,7 +191,7 @@
                         </li>
                         {% endif %}
                         {% endfor %}
-                        <li><a href="{% url 'store' %}">Store</a></li>
+                        <li class="dropdown-item"><a href="{% url 'store' %}">Store</a></li>
                     </ul>
                 </div>
                 {% endif %}
@@ -225,14 +216,14 @@
 
                 {% else %}
                 <div class="dropdown">
-                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1"
+                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton5"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Plant
                     </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton5">
                         {% for item in items %}
                         {% if item.owner == user and item.item.category.name == 'seeds' %}
-                        <li>
+                        <li class="dropdown-item">
                             <form class="form store-price"
                                 action="{% url 'plant_crop' item=item.item cropslot='crop5' number='1' %}" method="POST">
                                 {% csrf_token %}
@@ -245,7 +236,7 @@
                         </li>
                         {% endif %}
                         {% endfor %}
-                        <li><a href="{% url 'store' %}">Store</a></li>
+                        <li class="dropdown-item"><a href="{% url 'store' %}">Store</a></li>
                     </ul>
                 </div>
                 {% endif %}
@@ -270,14 +261,14 @@
 
                 {% else %}
                 <div class="dropdown">
-                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1"
+                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton6"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Plant
                     </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton6">
                         {% for item in items %}
                         {% if item.owner == user and item.item.category.name == 'seeds' %}
-                        <li>
+                        <li class="dropdown-item">
                             <form class="form store-price"
                                 action="{% url 'plant_crop' item=item.item cropslot='crop6' number='1' %}" method="POST">
                                 {% csrf_token %}
@@ -290,7 +281,7 @@
                         </li>
                         {% endif %}
                         {% endfor %}
-                        <li><a href="{% url 'store' %}">Store</a></li>
+                        <li class="dropdown-item"><a href="{% url 'store' %}">Store</a></li>
                     </ul>
                 </div>
                 {% endif %}
@@ -315,14 +306,14 @@
 
                 {% else %}
                 <div class="dropdown">
-                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1"
+                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton7"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Plant
                     </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton7">
                         {% for item in items %}
                         {% if item.owner == user and item.item.category.name == 'seeds' %}
-                        <li>
+                        <li class="dropdown-item">
                             <form class="form store-price"
                                 action="{% url 'plant_crop' item=item.item cropslot='crop7' number='1' %}" method="POST">
                                 {% csrf_token %}
@@ -335,7 +326,7 @@
                         </li>
                         {% endif %}
                         {% endfor %}
-                        <li><a href="{% url 'store' %}">Store</a></li>
+                        <li class="dropdown-item"><a href="{% url 'store' %}">Store</a></li>
                     </ul>
                 </div>
                 {% endif %}
@@ -360,14 +351,14 @@
 
                 {% else %}
                 <div class="dropdown">
-                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1"
+                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton8"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Plant
                     </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton8">
                         {% for item in items %}
                         {% if item.owner == user and item.item.category.name == 'seeds' %}
-                        <li>
+                        <li class="dropdown-item">
                             <form class="form store-price"
                                 action="{% url 'plant_crop' item=item.item cropslot='crop8' number='1' %}" method="POST">
                                 {% csrf_token %}
@@ -380,15 +371,17 @@
                         </li>
                         {% endif %}
                         {% endfor %}
-                        <li><a href="{% url 'store' %}">Store</a></li>
+                        <li class="dropdown-item"><a href="{% url 'store' %}">Store</a></li>
                     </ul>
                 </div>
                 {% endif %}
                 {% endif %}
                 {% endfor %}
             </div>
-
         </div>
+
+        <!-- insert second farm here -->
+        
     </div>
 </main>
 

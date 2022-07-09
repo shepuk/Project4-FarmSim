@@ -14,13 +14,15 @@ def profile(request):
 
 
 def premium(request, user):
-    """ Display the user's profile. """
+    """ Display the premium purchase page. """
 
     context = {}
 
     return render(request, 'profiles/premium.html', context)
 
+
 def buy_premium(request, price, price2):
+    """ Creates and redirects to a Stripe payment service """
 
     STRIPE_KEY = settings.STRIPE_KEY
 
@@ -39,8 +41,5 @@ def buy_premium(request, price, price2):
         ],
         mode="payment",
         )
-    print(session.url)
-
-    context = {}
     
     return redirect(session.url)

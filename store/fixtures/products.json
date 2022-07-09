@@ -339,7 +339,7 @@
         "fields": {
             "category": 3,
             "sku": "022",
-            "name": "parsnip",
+            "name": "Parsnip",
             "description": "A parsnip. The perfect side for a roast dinner",
             "price": 22,
             "sell_price": 22,
@@ -419,7 +419,7 @@
         "fields": {
             "category": 3,
             "sku": "027",
-            "name": "tomato",
+            "name": "Tomato",
             "description": "A fully grown tomato. Used for curries, pizza, pasta, salads and many more!",
             "price": 14,
             "sell_price": 14,
@@ -443,6 +443,54 @@
             "produces": "",
             "image_url": "",
             "image": "wheat.png"
+        }
+    },
+    {
+        "pk": 29,
+        "model": "store.product",
+        "fields": {
+            "category": 2,
+            "sku": "029",
+            "name": "Axe",
+            "description": "A sturdy axe. Use when collecting materials such as wood.",
+            "price": 300,
+            "sell_price": 250,
+            "growtime": 0,
+            "produces": "",
+            "image_url": "",
+            "image": "axe.png"
+        }
+    },
+    {
+        "pk": 30,
+        "model": "store.product",
+        "fields": {
+            "category": 2,
+            "sku": "030",
+            "name": "Scythe",
+            "description": "A scythe used for harvesting crops. Old-school but effective.",
+            "price": 350,
+            "sell_price": 300,
+            "growtime": 0,
+            "produces": "",
+            "image_url": "",
+            "image": "scythe.png"
+        }
+    },
+    {
+        "pk": 31,
+        "model": "store.product",
+        "fields": {
+            "category": 2,
+            "sku": "031",
+            "name": "Watering Can",
+            "description": "A metal watering canister. Helps crops and plants to flourish.",
+            "price": 400,
+            "sell_price": 350,
+            "growtime": 0,
+            "produces": "",
+            "image_url": "",
+            "image": "watercan.png"
         }
     }
 ]

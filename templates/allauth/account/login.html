@@ -14,59 +14,39 @@
       <h1 class="mb-0 text-white lh-1">Sign In</h1>
     </div>
   </div>
-
   <div class="my-3 p-3 bg-body rounded shadow-sm">
-
-    <div class="d-flex pt-3 border-bottom">
-
-
+    <div class="d-flex pt-3 signin-signout-option">
       {% get_providers as socialaccount_providers %}
-
       {% if socialaccount_providers %}
       <p>{% blocktrans with site.name as site_name %}Please sign in with one
         of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
         for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
-
       <div class="socialaccount_ballot">
-
         <ul class="socialaccount_providers">
           {% include "socialaccount/snippets/provider_list.html" with process="login" %}
         </ul>
-
         <div class="login-or">{% trans 'or' %}</div>
-
       </div>
-
       {% include "socialaccount/snippets/login_extra.html" %}
-
       {% else %}
       <p>{% blocktrans %}If you have not created an account yet, then please
         <a href="{{ signup_url }}"><strong>sign up</strong></a> first.{% endblocktrans %}</p>
       {% endif %}
-
-    </div>
-
-    <div class="pt-3 border-bottom">
-
       <div class="login-register-input">
-      <form class="login" method="POST" action="{% url 'account_login' %}">
-        {% csrf_token %}
-        {{ form.as_p }}
-        {% if redirect_field_value %}
-        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-        {% endif %}
-
+        <form class="login" method="POST" action="{% url 'account_login' %}">
+          {% csrf_token %}
+          {{ form.as_p }}
+          {% if redirect_field_value %}
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+          {% endif %}
+      </div>
+      <div class="pt-3">
+        <a class="secondaryAction" href="{% url 'account_reset_password' %}"><button
+            class="button">{% trans "Forgot Password?" %}</button></a>
+        <button class=" button primaryAction" type="submit">{% trans "Sign In" %}</button>
+        </form>
       </div>
     </div>
-
-    <div class="pt-3 border-bottom">
-
-      <a class="secondaryAction" href="{% url 'account_reset_password' %}"><button class="button">{% trans "Forgot Password?" %}</button></a>
-      <button class=" button primaryAction" type="submit">{% trans "Sign In" %}</button>
-      </form>
-
-    </div>
-
   </div>
 </main>
 

@@ -30,6 +30,7 @@
   </script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="{% static 'js/sidebar.js' %}"></script>
   {% endblock %}
 
@@ -45,7 +46,7 @@
     <div class="logo"><img src="/media/ui/sunrise-logo.png" alt=""></div>
     {% if request.user.is_authenticated %}
     <a href="{% url 'home' %}"><i class="fa-solid fa-wheat-awn"></i> My Farm</a>
-    <a href="{% url 'store' %}"><i class="fa-solid fa-store"></i> Visit Town</a>
+    <a href="{% url 'home' %}#headout"><i class="fa-solid fa-store"></i> Visit Town</a>
     <a href="{% url 'profile' %}"><i class="fa-solid fa-user"></i> My Account</a>
     <a href="{% url 'account_logout' %}" class=""><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
     {% else %}
@@ -86,8 +87,6 @@
         <footer>
           <ol class="nav justify-content-center border-bottom border-success pb-3">
             <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><i class="fa-brands fa-github"></i></a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><i class="fa-brands fa-linkedin-in"></i></a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><i class="fa-solid fa-user-graduate"></i></a></li>
           </ol>
           <p class="text-center text-muted">Designed and built by Paul Shepherd</p>
         </footer>
