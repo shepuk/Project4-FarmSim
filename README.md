@@ -20,3 +20,6 @@ gold icon from <a href="https://www.flaticon.com/free-icons/coin" title="coin ic
 stick note design from https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-with-css3-and-html5--net-13934
 
 hero image https://www.pexels.com/photo/aerial-shot-of-green-milling-tractor-1595108/
+
+gold text https://codepen.io/mandymichael/pen/xpLNeV
+

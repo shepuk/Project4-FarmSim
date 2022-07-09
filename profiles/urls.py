@@ -5,4 +5,5 @@ urlpatterns = [
     path('', views.profile, name='profile'),
     path('<user>', views.premium, name='premium'),
     path('<price>/<price2>', views.buy_premium, name='buy_premium'),
+    path('success/', views.premium_success, name='premium_success'),
 ]

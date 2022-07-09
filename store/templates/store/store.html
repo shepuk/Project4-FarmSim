@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-
+{% block extra_title %} - Store {% endblock %}
 {% block content %}
 
 <main class="container">
@@ -11,27 +11,11 @@
             <small>Seeds, tools, and more! Click a product for more info.</small>
         </div>
     </div>
-
     <div class="my-3 p-3 bg-body rounded shadow-sm">
-
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                All Items
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="#">All Items</a></li>
-                <li><a class="dropdown-item" href="#">Seeds</a></li>
-                <li><a class="dropdown-item" href="#">Flowers</a></li>
-                <li><a class="dropdown-item" href="#">Tools</a></li>
-            </ul>
-        </div>
-
         <div class="store-headers">
         <span class="badge bg-success">Itm</span>
         <span class="badge bg-success store-price">Qty</span>
     </div>
-
         {% for product in products %}
         <div class="d-flex pt-3 border-bottom store-item">
             <a href="{% url 'product_detail' product.name %}">
@@ -43,23 +27,17 @@
                     <img class="coin" src="/media/ui/coin.png" alt="coin, currency of sunrise farm">{{ product.price }}
                 </p>
             </a>
-
             <form class="form store-price" action="{% url 'add_to_user_inventory' product.id %}" method="POST">
                 {% csrf_token %}
                 <div class="input-group input-group-sm">
                     <input class="form-control qty_input qty-input" type="number" name="quantity" value="1" min="1"
-                        max="99" data-item_id="{{ product.name }}" id="id_qty_{{ product.id }}">
-                        
+                        max="99" data-item_id="{{ product.name }}" id="id_qty_{{ product.id }}"> 
                     <span class="input-group-text"><input class="buy-button" type="submit" value="Buy"></span>
                 </div>
-
                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
-
             </form>
         </div>
-
         {% endfor %}
-
     </div>
 </main>
 {% endblock %}

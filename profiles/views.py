@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from .models import Profile
 import stripe
 from django.conf import settings
 import datetime
@@ -43,3 +44,12 @@ def buy_premium(request, price, price2):
         )
     
     return redirect(session.url)
+
+
+def premium_success(request):
+    """ Adds premium membership to user account """
+    user = request.user
+    profile = Profile.objects.get(user=user)
+    profile.is_premium = 'yes'
+    profile.save()
+    return render(request, 'profiles/purchased.html')

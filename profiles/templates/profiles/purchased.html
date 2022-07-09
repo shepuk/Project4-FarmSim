@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_title %} - Profile {% endblock %}
+{% block content %}
+
+<main class="container">
+    <div class="d-flex align-items-center p-3 my-3 text-white bg-green rounded shadow-sm">
+        <div class="lh-1">
+            <h1 class="h6 mb-0 text-white lh-1">Welcome to the club, {{ user.username }}!</h1>
+        </div>
+    </div>
+    <div class="my-3 p-3 bg-body rounded shadow-sm">
+        <div class="d-flex pt-3 premium-message">
+            <p>You're now a</p>
+            <h1 class="pb-3 mb-0 small lh-sm ">
+                <strong class="d-block premium-text">PREMIUM</strong>
+            </h1>
+            <p>member!</p>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

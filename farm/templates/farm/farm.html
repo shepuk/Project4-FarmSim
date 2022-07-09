@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-
+{% block extra_title %} - Crop Field {% endblock %}
 {% block content %}
 
 <main class="container">
@@ -10,15 +10,12 @@
             <small>Plant, grow and harvest crops.</small>
         </div>
     </div>
-
     <div class="my-3 p-3 bg-body rounded shadow-sm">
         <h6 class="border-bottom pb-2 mb-0">Your crops</h6>
-
         <div class="container field-container">
             <div class="field-background">
                 <img src="/media/ui/field.png" alt="">
             </div>
-
             <div class="plant1 plant">
                 {% for farm in farms %}
                 {% if farm.user == user %}
@@ -26,14 +23,11 @@
                 <img class="store-image-details" src="{{ farm.crop1.image.url }}" alt="{{ farm.crop1 }}">
                 <div class="harvest-time">{{ farm.crop1_harvest_time|date:"F d, Y, G:i:s a" }}</div>
                 <div class="plant-time">{{ farm.crop1_plant_time|date:"F d, Y, G:i:s a" }}</div>
-
                 <div class="progressContainer">
                 </div>
-
                 <a class="progressHarvestContainer" href="{% url 'harvest_crop' crop=farm.crop1 position='crop1' %}">
                     Harvest
                     </a>
-                
                 {% else %}
                 <div class="dropdown">
                     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1"
@@ -63,7 +57,6 @@
                 {% endif %}
                 {% endfor %}
             </div>
-
             <div class="plant2 plant">
                 {% for farm in farms %}
                 {% if farm.user == user %}
@@ -71,14 +64,11 @@
                 <img class="store-image-details" src="{{ farm.crop2.image.url }}" alt="{{ farm.crop2 }}">
                 <div class="harvest-time">{{ farm.crop2_harvest_time|date:"F d, Y, G:i:s a" }}</div>
                 <div class="plant-time">{{ farm.crop2_plant_time|date:"F d, Y, G:i:s a" }}</div>
-
                 <div class="progressContainer">
                 </div>
-
                 <a class="progressHarvestContainer" href="{% url 'harvest_crop' crop=farm.crop2 position='crop2' %}">
                     Harvest
                     </a>
-
                 {% else %}
                 <div class="dropdown">
                     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton2"
@@ -108,7 +98,6 @@
                 {% endif %}
                 {% endfor %}
             </div>
-
             <div class="plant3 plant">
                 {% for farm in farms %}
                 {% if farm.user == user %}
@@ -116,14 +105,11 @@
                 <img class="store-image-details" src="{{ farm.crop3.image.url }}" alt="{{ farm.crop3 }}">
                 <div class="harvest-time">{{ farm.crop3_harvest_time|date:"F d, Y, G:i:s a" }}</div>
                 <div class="plant-time">{{ farm.crop3_plant_time|date:"F d, Y, G:i:s a" }}</div>
-
                 <div class="progressContainer">
                 </div>
-
                 <a class="progressHarvestContainer" href="{% url 'harvest_crop' crop=farm.crop3 position='crop3' %}">
                     Harvest
                     </a>
-
                 {% else %}
                 <div class="dropdown">
                     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton3"
@@ -153,7 +139,6 @@
                 {% endif %}
                 {% endfor %}
             </div>
-
             <div class="plant4 plant">
                 {% for farm in farms %}
                 {% if farm.user == user %}
@@ -161,14 +146,11 @@
                 <img class="store-image-details" src="{{ farm.crop4.image.url }}" alt="{{ farm.crop4 }}">
                 <div class="harvest-time" id="harvest-time">{{ farm.crop4_harvest_time|date:"F d, Y, G:i:s a" }}</div>
                 <div class="plant-time" id="plant-time">{{ farm.crop4_plant_time|date:"F d, Y, G:i:s a" }}</div>
-
                 <div class="progressContainer">
                 </div>
-
                 <a class="progressHarvestContainer" href="{% url 'harvest_crop' crop=farm.crop4 position='crop4' %}">
                     Harvest
                     </a>
-
                 {% else %}
                 <div class="dropdown">
                     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton4"
@@ -198,7 +180,6 @@
                 {% endif %}
                 {% endfor %}
             </div>
-
             <div class="plant5 plant">
                 {% for farm in farms %}
                 {% if farm.user == user %}
@@ -206,14 +187,11 @@
                 <img class="store-image-details" src="{{ farm.crop5.image.url }}" alt="{{ farm.crop5 }}">
                 <div class="harvest-time" id="harvest-time">{{ farm.crop5_harvest_time|date:"F d, Y, G:i:s a" }}</div>
                 <div class="plant-time" id="plant-time">{{ farm.crop5_plant_time|date:"F d, Y, G:i:s a" }}</div>
-
                 <div class="progressContainer">
                 </div>
-
                 <a class="progressHarvestContainer" href="{% url 'harvest_crop' crop=farm.crop5 position='crop5' %}">
                     Harvest
                     </a>
-
                 {% else %}
                 <div class="dropdown">
                     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton5"
@@ -243,7 +221,6 @@
                 {% endif %}
                 {% endfor %}
             </div>
-
             <div class="plant6 plant">
                 {% for farm in farms %}
                 {% if farm.user == user %}
@@ -251,14 +228,11 @@
                 <img class="store-image-details" src="{{ farm.crop6.image.url }}" alt="{{ farm.crop6 }}">
                 <div class="harvest-time" id="harvest-time">{{ farm.crop6_harvest_time|date:"F d, Y, G:i:s a" }}</div>
                 <div class="plant-time" id="plant-time">{{ farm.crop6_plant_time|date:"F d, Y, G:i:s a" }}</div>
-
                 <div class="progressContainer">
                 </div>
-
                 <a class="progressHarvestContainer" href="{% url 'harvest_crop' crop=farm.crop6 position='crop6' %}">
                     Harvest
                     </a>
-
                 {% else %}
                 <div class="dropdown">
                     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton6"
@@ -288,7 +262,6 @@
                 {% endif %}
                 {% endfor %}
             </div>
-
             <div class="plant7 plant">
                 {% for farm in farms %}
                 {% if farm.user == user %}
@@ -296,14 +269,11 @@
                 <img class="store-image-details" src="{{ farm.crop7.image.url }}" alt="{{ farm.crop7 }}">
                 <div class="harvest-time" id="harvest-time">{{ farm.crop7_harvest_time|date:"F d, Y, G:i:s a" }}</div>
                 <div class="plant-time" id="plant-time">{{ farm.crop7_plant_time|date:"F d, Y, G:i:s a" }}</div>
-
                 <div class="progressContainer">
                 </div>
-
                 <a class="progressHarvestContainer" href="{% url 'harvest_crop' crop=farm.crop7 position='crop7' %}">
                     Harvest
                     </a>
-
                 {% else %}
                 <div class="dropdown">
                     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton7"
@@ -333,7 +303,6 @@
                 {% endif %}
                 {% endfor %}
             </div>
-
             <div class="plant8 plant">
                 {% for farm in farms %}
                 {% if farm.user == user %}
@@ -341,14 +310,11 @@
                 <img class="store-image-details" src="{{ farm.crop8.image.url }}" alt="{{ farm.crop8 }}">
                 <div class="harvest-time" id="harvest-time">{{ farm.crop8_harvest_time|date:"F d, Y, G:i:s a" }}</div>
                 <div class="plant-time" id="plant-time">{{ farm.crop8_plant_time|date:"F d, Y, G:i:s a" }}</div>
-
                 <div class="progressContainer">
                 </div>
-
                 <a class="progressHarvestContainer" href="{% url 'harvest_crop' crop=farm.crop8 position='crop8' %}">
                     Harvest
                     </a>
-
                 {% else %}
                 <div class="dropdown">
                     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton8"
@@ -379,14 +345,8 @@
                 {% endfor %}
             </div>
         </div>
-
-        <!-- insert second farm here -->
-        
+        <!-- insert second premium farm here -->
     </div>
 </main>
-
-{% block extra_js %}
-
-{% endblock %}
 <script src="{% static 'js/crop-timer.js' %}"></script>
 {% endblock %}

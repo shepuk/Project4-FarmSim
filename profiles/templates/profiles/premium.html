@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-
+{% block extra_title %} - Premium {% endblock %}
 {% block content %}
 
 <main class="container">
@@ -10,17 +10,13 @@
       <small>Check and update your details.</small>
     </div>
   </div>
-
   <div class="my-3 p-3 bg-body rounded shadow-sm">
-
-
     <div class="d-flex pt-3 border-bottom">
       <p class="pb-3 mb-0 small lh-sm ">
         <strong class="d-block text-gray-dark">Buy Premium</strong>
         Receive special rewards for buying a premium membership!
       </p>
     </div>
-
     <div class="container rounded">
       <div class="row justify-content-center mt-3">
         <div class="col-lg-4">
@@ -34,6 +30,7 @@
                 <li><span class="fa-li"><i class="fas fa-check"></i></span>Reduced grow times</li>
                 <li><span class="fa-li"><i class="fas fa-check"></i></span>Increased sell prices</li>
                 <li><span class="fa-li"><i class="fas fa-check"></i></span>Store discounts</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Cool banner</li>
               </ul>
               <div class="d-grid">
                 <form action="{% url 'buy_premium' price=1 price2=2 %}" method="POST">

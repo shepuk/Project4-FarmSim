@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-
+{% block extra_title %} - Inventory {% endblock %}
 {% block content %}
 
 <main class="container">
@@ -10,7 +10,6 @@
             <small>Check all of your currently owned items from here.</small>
         </div>
     </div>
-
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-4 col-sm-5 col-5 item-slot align-items-center">
@@ -26,13 +25,10 @@
             <div class="col-md-2 col-sm-5 col-5 item-slot">
                 <img class="special-item" src="/media/watercan.png" alt="A watering can">
             </div>
-
         </div>
     </div>
-
     <div class="my-3 p-3 bg-body rounded shadow-sm">
         <h6 class="border-bottom pb-2 mb-0">Your Inventory</h6>
-
         {% for item in items %}
         {% if item.owner == user %}
         <a href="{% url 'product_detail' item.item %}">
@@ -47,7 +43,6 @@
         </a>
         {% endif %}
         {% endfor %}
-
         <small class="d-block text-end mt-3">
             <a href="{% url 'home' %}">Back to farm</a>
         </small>
