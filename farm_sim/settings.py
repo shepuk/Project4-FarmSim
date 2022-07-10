@@ -34,7 +34,7 @@ SECRET_KEY = 'django-insecure-ziee31=y8qlbkws=vv6l-%l-#bb8r9gt(*h2__2*xo94a_7=0-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['sunrise-farm.herokuapp.com', 'localhost']
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
@@ -123,12 +123,17 @@ WSGI_APPLICATION = 'farm_sim.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 
 # Password validation
