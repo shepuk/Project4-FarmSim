@@ -43,8 +43,8 @@
     <a href="{% url 'account_signup' %}" class=""><i class="fa-solid fa-user-plus"></i> Register</a>
     <a href="{% url 'account_login' %}" class=""><i class="fa-solid fa-user-check"></i> Login</a>
     {% endif %}
-    <a href="#"><i class="fa-solid fa-circle-question"></i> Help</a>
-    <a href="#"><i class="fa-solid fa-circle-info"></i> About</a>
+    <a href="{% url 'help' %}"><i class="fa-solid fa-circle-question"></i> Help</a>
+    <a href="{% url 'about' %}"><i class="fa-solid fa-circle-info"></i> About</a>
     {% if request.user.is_authenticated %}
     {% if user.profile.is_premium == "yes" %}
     <div class="premium-tag">Premium</div>

@@ -7,9 +7,10 @@
   <div class="d-flex align-items-center p-3 my-3 text-white bg-green rounded shadow-sm">
     <div class="lh-1">
       <h1 class="mb-0 text-white lh-1">Sunrise Farm</h1>
-      {% if user.is_authenticated %}<small>Access your farm, go shopping, or check your inventory from here!</small>{% endif %}
+      {% if user.is_authenticated %}<small>Access your farm, go shopping, or check your inventory from
+        here!</small>{% endif %}
     </div>
-  </div>  
+  </div>
   {% if user.is_authenticated %}
   <div class="my-3 p-3 bg-body rounded shadow-sm">
     <img src="/media/ui/player_house.gif" alt="A farm house">
@@ -45,7 +46,7 @@
     <h6 class="border-bottom pb-2 mb-0" id="headout">Head Out</h6>
     <a href="{% url 'store' %}">
       <div class="d-flex pt-3 border-bottom store-item">
-        <img class="store-image" src="/media/ui/carrot.png" alt="A carrot icon">
+        <i class="fa-solid fa-coins" style="font-size:2em;margin-right:5px;color:green;"></i>
         <p class="pb-3 mb-0 small lh-sm ">
           <strong class="d-block text-gray-dark">Store</strong>
           Browse, buy and sell items.
@@ -55,7 +56,7 @@
     </a>
     <a href="{% url 'market' %}">
       <div class="d-flex pt-3 border-bottom store-item">
-        <img class="store-image" src="/media/ui/carrot.png" alt="A carrot icon">
+        <i class="fa-solid fa-money-bill-wheat" style="font-size:2em;margin-right:5px;color:green;"></i>
         <p class="pb-3 mb-0 small lh-sm ">
           <strong class="d-block text-gray-dark">Market</strong>
           Sell your goods.
@@ -93,29 +94,32 @@
         <p class="store-price"></p>
       </div>
     </a>
-  {% else %}
-    <div class="d-flex container-fluid rounded" lc-helper="background" style="height:50vh;background:url(../../../media/ui/hero.jpg)  center / cover no-repeat;">
+    {% else %}
+    <div class="d-flex container-fluid rounded" lc-helper="background"
+      style="height:50vh;background:url(../../../media/ui/hero.jpg)  center / cover no-repeat;">
     </div>
     <div class="container p-5 bg-light rounded-bottom" style="margin-top:-100px">
       <div class="row">
         <div class="col">
           <div class="lc-block ">
-              <h1 class="text-center">Welcome to Sunrise Farm.</h1>
+            <h1 class="text-center">Welcome to Sunrise Farm.</h1>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col">
           <div class="lc-block mt-5">
-              <p class="lead text-secondary text-center">Welcome to Sunrise Farm. As a new farm owner, you'll need to learn how to run things around here! Buy, sell, grow and harvest crops, and more.</p>
-              <p class="lead text-secondary text-center">Learn how to play with the help/about sections in the sidebar.</p>
-              <a href="{% url 'account_login' %}"><button class="button">Log in</button></a>
-              <a href="{% url 'account_signup' %}"><button class="button">Register</button></a>
+            <p class="lead text-secondary text-center">Welcome to Sunrise Farm. As a new farm owner, you'll need to
+              learn how to run things around here! Buy, sell, grow and harvest crops, and more.</p>
+            <p class="lead text-secondary text-center">Learn how to play with the help/about sections in the sidebar.
+            </p>
+            <a href="{% url 'account_login' %}"><button class="button">Log in</button></a>
+            <a href="{% url 'account_signup' %}"><button class="button">Register</button></a>
           </div>
         </div>
       </div>
-  {% endif %}
-  </div>
+      {% endif %}
+    </div>
 </main>
 
 {% endblock %}

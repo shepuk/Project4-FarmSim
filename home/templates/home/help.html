@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_title %} - Help {% endblock %}
+{% block content %}
+
+<main class="container">
+    <div class="d-flex align-items-center p-3 my-3 text-white bg-green rounded shadow-sm">
+        <div class="lh-1">
+            <h1 class="mb-0 text-white lh-1">Help</h1>
+            <small>Get help with the website, or get in touch.</small>
+        </div>
+    </div>
+    <div class="my-3 p-3 bg-body rounded shadow-sm">
+        <div class="d-flex pt-3 border-bottom">
+            <article class="">
+                <h2 class="">What is Sunrise Farm?</h2>
+                <p>Sunrise Farm is an interactive farm game/simulation.</p>
+                <hr>
+                <p>As a new farm owner, you can grow and harvest crops on a patch of farm land. Buying and selling crops
+                    is also an important part of your duties.</p>
+                <h2>Your farm</h2>
+                <p>Head over to your farm and you will see a crop patch and 8 slots in which you can plant seeds. Select
+                    a seed from the dropdown menu (you may need to buy some first!) and click it to plant that seed.
+                    A timer will then show, and this is your plant's countdown to harvest time.</p>
+                <p>Once your seed is ready, you may harvest it by clicking the 'harvest' button underneath. You'll get a
+                    new item in your inventory depending on what you planted. For example, if you plant a carrot seed,
+                    you can expect a carrot to be harvested and added to your inventory.</p>
+
+
+            </article>
+        </div>
+        </a>
+    </div>
+</main>
+
+{% endblock %}
