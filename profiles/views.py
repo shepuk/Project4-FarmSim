@@ -3,6 +3,7 @@ from .models import Profile
 import stripe
 from django.conf import settings
 import datetime
+import os
 
 
 def profile(request):
@@ -25,9 +26,7 @@ def premium(request, user):
 def buy_premium(request, price, price2):
     """ Creates and redirects to a Stripe payment service """
 
-    STRIPE_KEY = settings.STRIPE_KEY
-
-    print(STRIPE_KEY)
+    STRIPE_KEY = os.environ.get('STRIPE_KEY')
 
     stripe.api_key = STRIPE_KEY
 
