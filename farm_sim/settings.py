@@ -32,7 +32,7 @@ if os.path.isfile(dotenv_file):
 SECRET_KEY = 'django-insecure-ziee31=y8qlbkws=vv6l-%l-#bb8r9gt(*h2__2*xo94a_7=0-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['sunrise-farm.herokuapp.com', 'localhost']
 
