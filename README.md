@@ -211,20 +211,29 @@ All pages are designed with mobile and desktop browsing in mind. Columns stack o
 
 - #### User Stories
 1. 'As a  typical user, I want to be able to use and understand the site with ease, and navigate without any major issues.'
-    - 
+    - Care was taken into designing the UI for the site, and around designing a smooth and understandable UX. A responsive sidebar is used with large, obvious buttons which are clearly labeled. Headings make content obvious and the page count is kept down to a minimum to avoide excessive browsing. Everything is accessible in at least two clicks, meaning users can get where they need to be in a matter of seconds.
 2. 'As a fan of casual gaming, I want a fun and low-stress and satisfying game loop which I can return to on a regular, and sometimes sporadic, basis' 
+    - The app offers a casual and low-impact gaming experience. As memtioned above,  the game loop could certainly be more fleshed out and satisfying, but in its current state the game still offers a stress-free and rewarding set of features. I made sure to not make any actions take too long (such as waiting for crops to harvest) as this would slow down actions and become less interesting. User data is persistent so that casual users can return whenever and pick up where they left off.
 3. 'As an advanced user, I require quick navigation and responsive feedback. An option to upgrade with a payment option would also be interesting.'
+    - A tripe payment system was implemented to satisfy this user story. Navigation and quick, informative toasts are used to provide quick-clickers with instant feedback. A local database also helps with speed.
 4. 'As an inexperienced user, I need to understand the basics and easilly gather information on how to operate the site.'
+    - A comprehensive help guide is offered alongside a site designed around easy user interaction. Visually, users can see obviously what the goals of the site are and what they should be doing.
 
 - #### New Visitors
 1. The app should be clear in it's intent, and designed around user-friendliness.
+    - New visitors are presented with clearly labeled options and interactions which provide relevant feedback if they are doing something which is outside of the rules of the logic. 
 2. Clear feedback should be provided in response to user interaction.
+    - Feedback is provided accross the whole site and give users instant feed back as to actions performed that are either correct or incorrect. Quick guidance is provided in the toast messagig to let users know if they need to try something else. 
 3. Easy user authentication and signup process is a must.
+    - Thanks to AllAuth, user authentication was implemented easilly and users can expect a quick and easy login/logout/register process.
 
 - #### Returning Visitors
 1. Content should be easilly and quickly accessible.
+    - A responsive sidebar is used with large, obvious buttons which are clearly labeled. Headings make content obvious and the page count is kept down to a minimum to avoide excessive browsing. Everything is accessible in at least two clicks, meaning users can get where they need to be in a matter of seconds.
 2. User information such as current coins should be displayed clearly and quickly.
+    - Coins and inventory are extremely easy to find and the current coins amount is persistent showed in the nav area for logged in users.
 3.  Game state should be maintained and the user should be presented with what they expect to see.
+    - The database is used to store critical game information and was designed that users, once logged in, will see the exact same information as when they logged out. Eg- Datetime is used for the farm/crops section so that even if the game is left for a while or logged out, the game logic will still calculate the time between the original dates/times and provide the correct data.
 
 
 - #### Manual Testing
