@@ -117,11 +117,11 @@ All pages are designed with mobile and desktop browsing in mind. Columns stack o
 
 - ### Wireframes
     - Early design descisions were made using wireframes. I was able to stick to the inidial wireframe designs closely and only minor changes were made.
-![Wireframe image]()
+![Wireframe image](https://github.com/shepuk/Project4-FarmSim/blob/main/media/wireframes/wireframe.png)
 
 - ### Flow diagram
     - A flow diagram was also created early on, to help structure the flow of the app. 
-![Flowchart image]()
+![Flowchart image](https://github.com/shepuk/Project4-FarmSim/blob/main/media/wireframes/flowchart.png)
 
 ### Features
 - #### Current features
