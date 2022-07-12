@@ -4,6 +4,28 @@ Sunrise Farm is an interactive full stack app powered by Django. Grow and harves
 
 ![amiresponsive screenshot](/media/screenshots/home.png)
 
+- [Sunrise Farm](#sunrise-farm)
+    + [Visit the website](#visit-the-website)
+    + [Full stack Project](#full-stack-project)
+    + [Primary Objectives](#primary-objectives)
+    + [Early ideas & goals](#early-ideas---goals)
+    + [Screenshots](#screenshots)
+    + [Responsive Design](#responsive-design)
+    + [User Experience](#user-experience)
+    + [Design](#design)
+    + [Wireframes](#wireframes)
+    + [Flow diagram](#flow-diagram)
+    + [Features](#features)
+    + [Security](#security)
+    + [Technologies](#technologies)
+    + [Testing](#testing)
+    + [Bugs & Issues](#bugs---issues)
+    + [Setup, Backups & Deployment](#setup--backups---deployment)
+    + [Credits](#credits)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+
 ### Visit the website
 
 [View the live project here.](https://sunrise-farm.herokuapp.com/)
