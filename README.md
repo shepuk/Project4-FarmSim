@@ -89,8 +89,8 @@ All pages are designed with mobile and desktop browsing in mind. Columns stack o
 - #### Typography
     - Google Fonts Martel was used for titles, headings and logos. Poppins was used for paragraph and smaller text. This serif & sans pairing offers an aesthetic look and seperates less important text form heading and section text.
 
-![Martel font](/mediascreenshots/martel.png)
-![Poppins font](/mediascreenshots/poppins.png)
+![Martel font](/media/screenshots/martel.png)
+![Poppins font](/media/screenshots/poppins.png)
 
 - #### Imagery
     - 16x16 retro-style sprites were used throughout the design to provide an old-school gaming feel. These types of sprites are readilly available for royalty-free use also. These were scaled up for modern screens and retained their pixel designs with CSS. Without this, images appear blurry and stretched.
@@ -116,12 +116,12 @@ All pages are designed with mobile and desktop browsing in mind. Columns stack o
 
 
 - ### Wireframes
-    - Early design descisions were made using wireframes. I was able to stick to the inidial wireframe designs closely and only minor changes were made. However die to time constraints I was not able to include all pages/features which can be seen in the wireframes.
-[Wireframe Screenshots](https://github.com/shepuk/Project4-farmsim/...wireframers)
+    - Early design descisions were made using wireframes. I was able to stick to the inidial wireframe designs closely and only minor changes were made.
+![Wireframe image]()
 
 - ### Flow diagram
-    - A flow diagram was also created early on, to help structure the flow of the app. [See it here](https://github.com/shepuk/Project4-farmsim/...flowchart)
-
+    - A flow diagram was also created early on, to help structure the flow of the app. 
+![Flowchart image]()
 
 ### Features
 - #### Current features
@@ -163,8 +163,9 @@ All pages are designed with mobile and desktop browsing in mind. Columns stack o
 - [Github](https://github.com/) was used to host and store the project files.
 - [Heroku](https://dashboard.heroku.com/login) is used to host the app.
 - [Gitpod](https://gitpod.io/workspaces) was my primary IDE during project development.
-- [Figma](https://www.figma.com/) was used during the design phase for wireframes and flowcharts.
-- A more thorough list of technologies uer, including plugins, can be found in the requirements.txt file 
+- [Figma](https://www.figma.com/) was used during the design phase for wireframes.
+- [Diagrams.net](https://app.diagrams.net/) was used for the flow chart.
+- A more thorough list of technologies used, including plugins, can be found in the requirements.txt file 
 
 ### Testing
 - #### Primary Objectives
