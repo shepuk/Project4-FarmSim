@@ -61,24 +61,23 @@ All pages are designed with mobile and desktop browsing in mind. Columns stack o
 
  ### User Experience
 - #### Target Audience
-    - Sunrise Farm is designed to be accessilble to everyone, and was build with a mass-appeal casual audience in mind. Influence form hyper-casual experiences such as FarmVille was critical is designing user experience. With emphasis put into ease of use, accessibilty and clear user goals, the app is useable by anyone.
+    - Sunrise Farm is designed to be accessilble to everyone, and was built with a mass-appeal casual audience in mind.
 
 - #### User Stories
-    - 'As a  typical user, 
-    - 'As a fan of casual gaming, 
-    - 'As an advanced user, 
-    - 'As an inexperienced user, 
-    - 'As a typical user,
+    - 'As a  typical user, I want to be able to use and understand the site with ease, and navigate without any major issues.'
+    - 'As a fan of casual gaming, I want a fun and low-stress and satisfying game loop which I can return to on a regular, and sometimes sporadic, basis' 
+    - 'As an advanced user, I require quick navigation and responsive feedback. An option to upgrade with a payment option would also be interesting.'
+    - 'As an inexperienced user, I need to understand the basics and easilly gather information on how to operate the site.'
 
 - #### New Visitors
-    - App should be clear in it's intent, and designed around user-friendliness.
-    - Clear feedback for user interaction is important.
+    - The app should be clear in it's intent, and designed around user-friendliness.
+    - Clear feedback should be provided in response to user interaction.
     - Easy user authentication and signup process is a must.
-    - Quick and responsive feedback.
 
 - #### Returning Visitors
     - Content should be easilly and quickly accessible.
     - User information such as current coins should be displayed clearly and quickly.
+    - Game state should be maintained and the user should be presented with what they expect to see.
 
 
 ### Design
@@ -149,34 +148,155 @@ All pages are designed with mobile and desktop browsing in mind. Columns stack o
 - Environmental variables are included in a .gitingore file to prevent any sensitive data being publicly available.
 
 
+### Technologies
+- [Django](https://www.djangoproject.com/) Framework was used to build the project
+- [AllAuth](https://github.com/pennersr/django-allauth)
+- [Python](https://www.python.org/) was the primary backend language used.
+- [Heroku Postgres](https://www.heroku.com/postgres) is a Heroku-hosted database which the project was ported to for hosting.
+- [JavaScript](https://www.javascript.com/) was used for some app logic.
+- [jQuery](https://jquery.com/) was used for DOM manipulation.
+- [Bootstrap CSS](https://getbootstrap.com/) CSS awas used throughout the app for it's attractive design and easy implementation.
+- [HTML](https://en.wikipedia.org/wiki/HTML) formed the structure of the site and also included significant Django templating.
+- [Font Awesome](https://fontawesome.com/) provided some icons throughout the site.
+- [Google Fonts](https://fonts.google.com/) provided the use of the Averia Libre font.
+- [Git](https://git-scm.com/) was used via the terminal for version control.
+- [Github](https://github.com/) was used to host and store the project files.
+- [Heroku](https://dashboard.heroku.com/login) is used to host the app.
+- [Gitpod](https://gitpod.io/workspaces) was my primary IDE during project development.
+- [Figma](https://www.figma.com/) was used during the design phase for wireframes and flowcharts.
+- A more thorough list of technologies uer, including plugins, can be found in the requirements.txt file 
+
+### Testing
+- #### Primary Objectives
+
+ 1. Design and deploy a full stack web application using Django.
+    - I have successfuly designed and built a full-stack web application using the Django framework. It is full stack in the sense that it is the functional entirety of an application, comprising both the front end and the back end.
+ 2. Create a highly interactive experience with relevant feedback to users.
+    - The app offers plenty of interactive pages with effective toast messaging providing feedback. 
+ 3. Model and manage data in a SQL database.
+    - The SQL database housing all app information is modeled and designed in a defensive way, properly dealing with errors and handling data relationships efficiently and intelligently.
+ 4. Query and manipulate data and offer CRUD functionality.
+    - The database is queried and manipulated on a regular bases as the user browses and interacts, offering full crud functionality.
+ 5. Meet guidelines regarding accessibility and UX design.
+    - Standard guidelines around accessibility and UX design have been met - with relevant symantec markup and descriptive tags. Colours, text and buttons are used effectively accross the site for maximum ease of use.
+ 6. Design and maintain a relational database housing multiple related models.
+    - The database contains many related fields and handles data manipulation efficiently. Multiple models have been set up. 
+ 7. Include online payment functionality.
+    - Stripe was used to implement a payment service, in which users can buy a premium membership and receive bonuses across many parts of the app experience.
+ 8. Deploy to a cloud platform.
+    - Final build was deployed to Heroku cloud platform, including a hosted postgres database.
+ 9.  Identify and apply security features.
+    - Outlined in [security](#security) section.
+
+
+- #### Early ideas & goals
+ 1. Design and build an interactive game with a deep set of additional features.
+    - I have built a highly interactive farming simulator-type game with several features and significant database operations. There are numerous features for users to partake in. As outlined above, however, there cwas a planned further set of features which I was not able to implement in time.
+ 2. Implement database CRUD functionality into the design.
+     - The database which I have implemented into the the back end of the app is integral to the user experience, and utilises full CRUD functionality.
+ 3. Design a databse in which fields are related and compared against each other. 
+     - Model fields rely heavily on related data, for example the product model houses many important fields which are used to supply information on how to deal with user interaction and alter inventory and user models.
+ 4. Create a varied & fun experience with longevity in mind.
+     - The final product does not quite meet my initial expectations with regards to longevity. This is mainly because the game loop is not fully complete and users are not presented with the full set of features to use their in-game assets. With that being said, I think the final product is still enjoyable and varied.
+ 5. Create a full game loop, in which users can make several key decisions.
+     - See above point. The game loop is not fully fleshed out, and users have limited choice when it comes to spending their in-game coins or selling products. To complete the game loop, there would be some risk/reward choices and goals to achieve such as 'should I sell or complete a task with these crops I have grown', and the ability for users to play towards certain goals.
+ 6. The content should be justified, accessible, responsive and presented logically.
+     - In terms of accessible and responsive design, the app is very user friendly and easy to use. Content is presented logically, and uses symantec markup tags like `<article>` for example. 
 
 
 
+- #### Target Audience
+1. Sunrise Farm is designed to be accessilble to everyone, and was built with a mass-appeal casual audience in mind. Influence form hyper-casual experiences such as FarmVille was critical in designing user experience. With emphasis put into ease of use, accessibilty and clear user goals, the app is useable by anyone.
+    -  Influence form hyper-casual experiences such as FarmVille was critical in designing user experience. With emphasis put into ease of use, accessibilty and clear user goals, the app is useable by anyone. The app caters to a wide audience well. 
 
-Bugs / Issues
+- #### User Stories
+1. 'As a  typical user, I want to be able to use and understand the site with ease, and navigate without any major issues.'
+    - 
+2. 'As a fan of casual gaming, I want a fun and low-stress and satisfying game loop which I can return to on a regular, and sometimes sporadic, basis' 
+3. 'As an advanced user, I require quick navigation and responsive feedback. An option to upgrade with a payment option would also be interesting.'
+4. 'As an inexperienced user, I need to understand the basics and easilly gather information on how to operate the site.'
 
-Admin interface not loading, CRF error
-Fix: https://stackoverflow.com/questions/29573163/django-admin-login-suddenly-demanding-csrf-token/70572093#70572093
+- #### New Visitors
+1. The app should be clear in it's intent, and designed around user-friendliness.
+2. Clear feedback should be provided in response to user interaction.
+3. Easy user authentication and signup process is a must.
 
-Could not associate multiple inventory items with the same user more then one
-Fix - was using onetoonefield, instead of foreighkey
+- #### Returning Visitors
+1. Content should be easilly and quickly accessible.
+2. User information such as current coins should be displayed clearly and quickly.
+3.  Game state should be maintained and the user should be presented with what they expect to see.
 
-Could not update/save model fields by using a variable as a field name in farm.views
-fix - string format method was used to insert the variable into the model query
 
-farm urls passing through two strings, were firing the first function in views every time because the first url can always avcept two strings.
-Quick fix - added a third (unised) parameter to url to differantiate urls
+- #### Manual Testing
+    - Multiple browsers and devices were used to test the application.
+    - The deployed website was also tested againt the development version to ensure everything worked as expected.
+    - BrowserStack was used for their large variety of testing functionalty. I was able to test the app on over 50 devices including different OS, tablets and mobiles.
+    - Modern browsers such as Chrome, Firefox and Edge display and load content as expected. Older browsers such as Internet Explorer are incompatible with large portions of the website, and are not reccomended. 
+    - Mobile browsers handle styling and responsive design very well. Identical functionality to desktop/laptop screens.
+    - Friends and family were utilised to test links, spelling, design and responsiveness.
 
-toasts were always showing with opacity 0 
-fixed by adding css to make fully opaque, then using jquery's fadeout() function to remove the message
+- #### Testing the code
+ - Validators were used for the deployed code.
+    - [PEP8 Online](http://pep8online.com/) was used to make sure Python code was written to guidelines and falls within PEP8 compliancy. [See the PEP8 results here]()
 
-gold icon from <a href="https://www.flaticon.com/free-icons/coin" title="coin icons">Coin icons created by Freepik - Flaticon
+### Bugs & Issues
+- #### Resolved bug examples
+1. Django admin interface was not loading, and producing a CRF error.
+    - Fix: Adding the following to middleware in settings resolved this issue: `django.middleware.csrf.CsrfViewMiddleware` [Link to fix](https://stackoverflow.com/questions/29573163/django-admin-login-suddenly-demanding-csrf-token/70572093#70572093)
 
-stick note design from https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-with-css3-and-html5--net-13934
+2. During development I ran into an issue when trying to associate multiple inventory items with the same user more then once.
+    - Fix - The fix here was using onetoonefield, instead of foreighkey
 
-hero image https://www.pexels.com/photo/aerial-shot-of-green-milling-tractor-1595108/
+3. Could not update/save model fields by using a variable as a field name in farm.views
+    - Fix - the python string format method was used to insert the variable into the model query.
 
-gold text https://codepen.io/mandymichael/pen/xpLNeV
+4. Farm urls passing through two strings, were firing the first function in views every time because the first url can always avcept two strings.
+    - Quick fix - added a third (unised) parameter to url to differantiate urls.
 
-heroku ERROR: Could not build wheels for backports.zoneinfo, which is required to install pyproject.toml-based projects
-https://stackoverflow.com/questions/71712258/error-could-not-build-wheels-for-backports-zoneinfo-which-is-required-to-insta
+5. Toasts were always showing with opacity 0 and were invisible to the user.
+    - Fixed by adding css to make fully opaque, then using jquery's fadeout() function to remove the message.
+
+6. heroku ERROR: Could not build wheels for backports.zoneinfo, which is required to install pyproject.toml-based projects
+    - Fix found on StackOverflow: [Link](https://stackoverflow.com/questions/71712258/error-could-not-build-wheels-for-backports-zoneinfo-which-is-required-to-insta)
+
+### Setup, Backups & Deployment
+[Gitpod](https://www.gitpod.io/) was used as my primary IDE.
+A template was provided by Code Institute which I cloned for my project repository.
+Opening the repository in Gitpod is made simple thanks to a [Chrome Extension](https://chrome.google.com/webstore/detail/gitpod-always-ready-to-co/dodmmooeoklaejobgleioelladacbeki).
+
+- Django commands used:
+1. Build Django app with `django-admin startproject farmsim`
+2. Add new apps to project with `django-admin startapp appName`
+3. Run development server with `python3 manage.py runserver`
+4. Trial run of database changes with `python3 manage.py makemigrations --dry-run`
+5. Database migrations with `python3 manage.py makemigrations`
+6. Database migrations with `python3 manage.py migrate`
+7. Fixture (JSON) loading with `python3 manage.py loaddata products`
+
+Git / Github were used for file versioning and hosting.
+`$ git add -A` was used initially to add my files and folders to the staging area, followed by git `$ commit -m "commit message"` and `$ git push` to add everything to my Github repository. These three commands allow me to commit changes and upload new code to Github. Git commits were used often, for any changes, new features or bug fixes.
+
+The Github repository was linked to Heroku for hosting and teasting early in development. Using the Heroku CLI, I was able to upload code to the Heroku hosting service with the following commands;
+`$ heroku login` (use Heroku login credentials here)
+`$ git add .`
+`$ git commit -am "Heroku commit message"`
+`$ git push heroku main`
+
+### Credits
+
+#### Documentation & Online Help
+- [Python Documentation](https://www.python.org/doc/)
+- [Django Documentation](https://docs.djangoproject.com/en/4.0/)
+- [Mozilla MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/column-count)
+- [W3 Schools](https://www.w3schools.com/)
+
+#### Media
+- [Hero image](https://www.pexels.com/photo/aerial-shot-of-green-milling-tractor-1595108/)
+- [Gold text](https://codepen.io/mandymichael/pen/xpLNeV)
+- [Gold icon](https://www.flaticon.com/free-icons/coin)
+
+#### Content
+All content was written by me.
+
+#### Acknowledgements
+Code Institute & Newcastle College.
