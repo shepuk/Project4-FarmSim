@@ -183,3 +183,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 PREMIUM_DISCOUNT = 10
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
