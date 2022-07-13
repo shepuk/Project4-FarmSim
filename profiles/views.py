@@ -25,14 +25,15 @@ def premium(request, user):
 
 def buy_premium(request, price, price2):
     """ Creates and redirects to a Stripe payment service """
+    user=request.user
 
     STRIPE_KEY = os.environ.get('STRIPE_KEY')
 
     stripe.api_key = STRIPE_KEY
 
     session = stripe.checkout.Session.create(
-        success_url="https://8000-shepuk-project4farmsim-xhmhcyec1z2.ws-eu51.gitpod.io/profile/1",
-        cancel_url="https://8000-shepuk-project4farmsim-xhmhcyec1z2.ws-eu51.gitpod.io/profile/1",
+        success_url="https://sunrise-farm.herokuapp.com/profile/"+{user}+"/success",
+        cancel_url="https://sunrise-farm.herokuapp.com/profile",
         line_items=[
             {
                 "price": 'price_1LIeqUAzWoPkZ58IkIq0o5Xe',
