@@ -8,9 +8,11 @@ from django.contrib.auth.models import User
 def market(request):
 
     inventory = Inventory.objects.all()
+    user=request.user
 
     context = {
         'inventory': inventory,
+        'user': user
     }
 
     return render(request, 'market/market.html', context)

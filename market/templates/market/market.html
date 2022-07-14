@@ -20,6 +20,7 @@
     </div>
 
         {% for item in inventory %}
+        {% if item.owner == user %}
         <div class="d-flex pt-3 border-bottom store-item">
             <a href="#">
                 <img class="store-image" src="{{ item.item.image.url }}" alt="{{ item.name }}">
@@ -46,7 +47,7 @@
 
             </form>
         </div>
-
+        {% endif %}
         {% endfor %}
 
     </div>
