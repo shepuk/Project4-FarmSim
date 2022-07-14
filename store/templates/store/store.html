@@ -24,7 +24,7 @@
                 <a href="{% url 'product_detail' product.name %}">
                 <p class="pb-3 mb-0 lh-sm">
                     <strong class="d-block text-gray-dark">{{ product.name }}</strong>
-                    <img class="coin" src="/media/ui/coin.png" alt="coin, currency of sunrise farm">{{ product.price }}
+                    <img class="coin" src="https://sunrise-farm.s3.eu-west-2.amazonaws.com/media/ui/coin.png" alt="coin, currency of sunrise farm">{{ product.price }}
                 </p>
             </a>
             <form class="form store-price" action="{% url 'add_to_user_inventory' product.id %}" method="POST">
