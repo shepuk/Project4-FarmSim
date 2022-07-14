@@ -55,7 +55,7 @@
     <nav class="navbar navbar-expand-lg navbar-fixed-top">
       <div class="openbtn" onclick="openNav();"><i class="fa-solid fa-bars"></i></div>
       {% if request.user.is_authenticated %}
-      <img class="coin nav-coin" src="/media/ui/coin.png"
+      <img class="coin nav-coin" src="https://sunrise-farm.s3.eu-west-2.amazonaws.com/media/ui/coin.png"
         alt="coin, currency of sunrise farm"><strong>{{ user.profile.coins }}</strong>
       {% endif %}
       <div class="openbtn openbtn-mobile" onclick="openNav();"><i class="fa-solid fa-bars"></i></div>
