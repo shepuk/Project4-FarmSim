@@ -6,7 +6,7 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 
 def market(request):
-
+    """ displays market page """
     inventory = Inventory.objects.all()
     user=request.user
 
@@ -19,7 +19,7 @@ def market(request):
 
 
 def sell_item(request, item, sellprice):
-
+    """ removed from owner inventory, logic to check coin amount and if user has enough to sell """
     owner = request.user
     user = Profile.objects.get(user=owner)
     crop = Inventory.objects.get(owner=owner, item__name=item)

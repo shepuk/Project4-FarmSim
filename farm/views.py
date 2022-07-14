@@ -9,7 +9,7 @@ from datetime import datetime, timedelta
 
 
 def farm (request):
-
+    """ renders main farm page """
     items = Inventory.objects.all()
     farms = Farm.objects.all()
     owner = request.user
@@ -29,6 +29,7 @@ def farm (request):
 
 
 def plant_crop(request, item, cropslot, number):
+    """ adds seed to crop, removed from inventory """
     print("plant_crop")
     items = Inventory.objects.all()
     # item = get_object_or_404(Product, name=item_item)
@@ -71,6 +72,7 @@ def plant_crop(request, item, cropslot, number):
 
 
 def harvest_crop(request, crop, position):
+    """ removes plant from crop space, add to user inventory """
     print(position)
     owner = request.user
     myFarm = Farm.objects.get(user=owner)
